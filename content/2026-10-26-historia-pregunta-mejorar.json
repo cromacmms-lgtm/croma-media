@@ -1,0 +1,20 @@
+{
+ "slug": "2026-10-26-historia-pregunta-mejorar",
+ "format": "story",
+ "date": "2026-10-26T18:05:00",
+ "story": {
+  "theme": "suave",
+  "kind": "question",
+  "eti": "Pregunta rápida",
+  "title": "¿Qué te gustaría **mejorar primero?**",
+  "size": 88,
+  "ring": false,
+  "options": [
+   "Que no se pierdan pedidos",
+   "Cumplir el preventivo",
+   "Saber cuánto gasto por equipo",
+   "Tener los repuestos a tiempo"
+  ],
+  "cta": "Respondé por DM"
+ }
+}

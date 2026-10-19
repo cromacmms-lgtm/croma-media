@@ -25,6 +25,16 @@ Este repositorio guarda las piezas que se publican en el Instagram de CROMA (@cr
 - **Llamada a la acción:** DM a @cromacmms o cromacmms@gmail.com.
 - Sin emojis decorativos ni signos de exclamación dobles.
 
+## Pilares de contenido
+
+1. **Valor de gestionar el mantenimiento con software** (sin mostrar el producto): comparaciones sin sistema / con sistema, impacto en organización, tiempo y dinero, costo de las detenciones, indicadores. Inspirarse en cómo comunican los mejores CMMS del mundo (MaintainX, UpKeep, Limble, Fracttal): datos concretos con fuente, comparaciones claras, tono directo.
+2. **Tips técnicos útiles** por rubro y temporada.
+3. **Marca:** quiénes somos, del piso de planta, frases propias. Sin fotos de personas: solo la marca.
+
+Datos externos solo con fuente citada en la slide y en el texto (por ejemplo, Siemens, *The True Cost of Downtime 2024*: las 500 empresas más grandes pierden el equivalente al 11 % de sus ingresos por detenciones no planificadas; 27 h por planta grande por mes).
+
+**No repetir:** el enfoque "tu mantenimiento sigue en papel" y las "5 señales" ya se usaron; no volver a ese ángulo.
+
 ## Plantillas (`engine/croma.py`)
 
 - `cover`, `brand`: portadas (fondos `claro`, `suave`, `violeta`, `noche`; decorado `ring` o `icon`).

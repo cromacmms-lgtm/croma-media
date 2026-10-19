@@ -1,18 +1,78 @@
 {
-  "slug": "2026-10-20-presentacion",
-  "format": "carousel",
-  "date": "2026-10-20T10:05:00",
-  "caption": "Hola, somos CROMA.\n\nVenimos del piso de planta. Coordinamos mantenimiento en industrias de Córdoba y vimos una y otra vez lo mismo: órdenes que se pierden, preventivos que no se ejecutan, detenciones que nadie vio venir y técnicos que no saben qué les toca hoy.\n\nPor eso creamos CROMA, un software de mantenimiento simple para el técnico, claro para el jefe de mantenimiento y rentable para el dueño. Para industria, hotelería, construcción y agro.\n\nSeguinos: cada semana compartimos tips de mantenimiento que podés aplicar mañana mismo.\n\n¿Querés conocerlo? Escribinos por DM o a cromacmms@gmail.com\n\n#mantenimiento #mantenimientoindustrial #CMMS #Córdoba #pymes #industria #ingeniería",
-  "slides": [
-    {"tpl": "brand", "theme": "violeta", "eti": "Hola, somos", "title": "Ingeniería aplicada al **mantenimiento.**", "sub": "Software de mantenimiento hecho en Córdoba, por gente que viene del piso de planta."},
-    {"tpl": "text", "theme": "claro", "icon": "casco", "eti": "De dónde venimos", "title": "Trabajamos años en **mantenimiento industrial.**", "body": ["Planificando preventivos, coordinando técnicos y atendiendo fallas en plena producción.", "Y en todas las plantas vimos los mismos problemas."]},
-    {"tpl": "items", "theme": "suave", "eti": "Lo que vimos una y otra vez", "items": [
-      {"num": "01", "icon": "checklist", "title": "Órdenes que se pierden", "text": "Entre papeles, cuadernos y WhatsApp."},
-      {"num": "02", "icon": "calendario", "title": "Preventivos que no se ejecutan", "text": "Planificados en un Excel que nadie abre."},
-      {"num": "03", "icon": "alerta", "title": "Detenciones que nadie vio venir", "text": "Te enterás cuando el equipo ya está fuera de servicio."},
-      {"num": "04", "icon": "persona", "title": "Técnicos sin agenda", "text": "No saben qué les toca hoy ni qué es prioridad."}
-    ]},
-    {"tpl": "text", "theme": "noche", "eti": "Por eso creamos CROMA", "title": "Mantenimiento profesional, **sin complicaciones.**", "body": ["Simple para el técnico. Claro para el jefe de mantenimiento. Rentable para el dueño."], "box": {"icon": "engranaje", "eti": "Para", "text": "Industria · Hotelería · Construcción · Agro"}},
-    {"tpl": "cta", "theme": "violeta", "eti": "Seguinos", "title": "Tips de mantenimiento **todas las semanas.**", "body": "Y si querés conocer CROMA con tus propios equipos, escribinos."}
-  ]
+ "slug": "2026-10-20-presentacion",
+ "format": "carousel",
+ "date": "2026-10-20T10:05:00",
+ "caption": "Hola, somos CROMA.\n\nVenimos del piso de planta. Coordinamos mantenimiento en industrias de Córdoba y vimos una y otra vez lo mismo: órdenes que se pierden, preventivos que no se ejecutan, detenciones que nadie vio venir y técnicos que no saben qué les toca hoy.\n\nPor eso creamos CROMA, un software de mantenimiento simple para el técnico, claro para el jefe de mantenimiento y rentable para el dueño. Para industria, hotelería, construcción y agro.\n\nSeguinos: cada semana compartimos tips de mantenimiento que podés aplicar mañana mismo.\n\n¿Querés conocerlo? Escribinos por DM o a cromacmms@gmail.com\n\n#mantenimiento #mantenimientoindustrial #CMMS #Córdoba #pymes #industria #ingeniería",
+ "slides": [
+  {
+   "tpl": "brand",
+   "theme": "violeta",
+   "eti": "Hola, somos",
+   "title": "Ingeniería aplicada al **mantenimiento.**",
+   "sub": "Software de mantenimiento hecho en Córdoba, por gente que viene del piso de planta."
+  },
+  {
+   "tpl": "text",
+   "theme": "claro",
+   "icon": "casco",
+   "eti": "De dónde venimos",
+   "title": "Trabajamos años en **mantenimiento industrial.**",
+   "body": [
+    "Planificando preventivos, coordinando técnicos y atendiendo fallas en plena producción.",
+    "Y en todas las plantas vimos los mismos problemas."
+   ]
+  },
+  {
+   "tpl": "items",
+   "theme": "suave",
+   "eti": "Lo que vimos una y otra vez",
+   "items": [
+    {
+     "num": "01",
+     "icon": "checklist",
+     "title": "Órdenes que se pierden",
+     "text": "Pedidos que llegan por cualquier lado y nadie registra."
+    },
+    {
+     "num": "02",
+     "icon": "calendario",
+     "title": "Preventivos que no se ejecutan",
+     "text": "Planificados en un Excel que nadie abre."
+    },
+    {
+     "num": "03",
+     "icon": "alerta",
+     "title": "Detenciones que nadie vio venir",
+     "text": "Te enterás cuando el equipo ya está fuera de servicio."
+    },
+    {
+     "num": "04",
+     "icon": "persona",
+     "title": "Técnicos sin agenda",
+     "text": "No saben qué les toca hoy ni qué es prioridad."
+    }
+   ]
+  },
+  {
+   "tpl": "text",
+   "theme": "noche",
+   "eti": "Por eso creamos CROMA",
+   "title": "Mantenimiento profesional, **sin complicaciones.**",
+   "body": [
+    "Simple para el técnico. Claro para el jefe de mantenimiento. Rentable para el dueño."
+   ],
+   "box": {
+    "icon": "engranaje",
+    "eti": "Para",
+    "text": "Industria · Hotelería · Construcción · Agro"
+   }
+  },
+  {
+   "tpl": "cta",
+   "theme": "violeta",
+   "eti": "Seguinos",
+   "title": "Tips de mantenimiento **todas las semanas.**",
+   "body": "Y si querés conocer CROMA con tus propios equipos, escribinos."
+  }
+ ]
 }
