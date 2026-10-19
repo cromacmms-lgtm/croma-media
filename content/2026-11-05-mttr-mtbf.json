@@ -1,0 +1,17 @@
+{
+  "slug": "2026-11-05-mttr-mtbf",
+  "format": "carousel",
+  "date": "2026-11-05T10:05:00",
+  "caption": "MTTR y MTBF, explicados sin vueltas.\n\nMTBF: cada cuánto falla un equipo. Cuanto más alto, mejor.\nMTTR: cuánto tardás en volver a ponerlo en marcha. Cuanto más bajo, mejor.\n\nCon dos números sabés si tu mantenimiento está mejorando o si solo estás apagando incendios. Pero sin registros no hay indicadores: el primer paso es anotar cada falla con el equipo, la hora de inicio y la de fin.\n\nGuardalo para la próxima reunión de mantenimiento.\n\n#MTTR #MTBF #indicadores #mantenimientoindustrial #confiabilidad #CMMS",
+  "slides": [
+    {"tpl": "cover", "theme": "noche", "deco": "icon", "icon": "grafico", "eti": "Indicadores de mantenimiento", "title": "MTTR y MTBF, **explicados sin vueltas.**", "sub": "Los dos números que te dicen si tu mantenimiento mejora."},
+    {"tpl": "formula", "theme": "claro", "eti": "MTBF", "title": "Tiempo medio **entre fallas.**", "lead": "Mide cada cuánto falla un equipo.", "name": "MTBF", "num": "Horas de funcionamiento", "den": "Cantidad de fallas", "good": "alto", "goodtext": "Cuanto más alto, mejor"},
+    {"tpl": "formula", "theme": "claro", "eti": "MTTR", "title": "Tiempo medio **de reparación.**", "lead": "Mide cuánto tardás en volver a ponerlo en marcha.", "name": "MTTR", "num": "Horas totales de reparación", "den": "Cantidad de reparaciones", "good": "bajo", "goodtext": "Cuanto más bajo, mejor"},
+    {"tpl": "example", "theme": "suave", "eti": "Un ejemplo", "title": "Un compresor en **un mes.**", "lead": "Trabajó 600 h y tuvo 3 fallas, que llevaron 2 h, 4 h y 3 h de reparación.", "results": [
+      {"label": "MTBF", "calc": "600 h ÷ 3 fallas", "value": "200", "unit": "h"},
+      {"label": "MTTR", "calc": "9 h ÷ 3 reparaciones", "value": "3", "unit": "h"}
+    ], "note": "Ejemplo ilustrativo."},
+    {"tpl": "compare", "theme": "claro", "eti": "Cómo mejorarlos", "title": "Dos frentes, **dos estrategias.**", "a": {"name": "Subir el MTBF", "icon": "tendencia", "list": ["Preventivo en fecha", "Registrar la causa de cada falla", "Atacar primero las que más se repiten"]}, "b": {"name": "Bajar el MTTR", "icon": "reloj", "list": ["Repuestos críticos en stock", "Procedimientos escritos", "Saber rápido qué falló y dónde"]}},
+    {"tpl": "cta", "theme": "violeta", "eti": "El primer paso", "title": "Sin registros **no hay indicadores.**", "body": "Empezá anotando cada falla: equipo, hora de inicio y hora de fin.", "pill": "Guardar para después"}
+  ]
+}

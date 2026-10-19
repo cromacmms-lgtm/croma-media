@@ -1,0 +1,24 @@
+{
+  "slug": "2026-11-01-temporada-hoteles",
+  "format": "carousel",
+  "date": "2026-11-01T10:05:00",
+  "caption": "Se viene la temporada en las sierras.\n\nEn un hotel o complejo de cabañas, una pileta fuera de servicio o un aire que no enfría en enero se convierten en reclamos, reseñas malas y devoluciones. Y en plena temporada conseguir un técnico o un repuesto lleva más tiempo.\n\nTe dejamos los 7 controles que conviene hacer ahora, con tiempo.\n\nGuardalo y compartilo con quien se encarga del mantenimiento.\n\n#hotelería #turismoCórdoba #cabañas #mantenimiento #temporada #CarlosPaz #Calamuchita",
+  "slides": [
+    {"tpl": "cover", "theme": "violeta", "deco": "ring", "eti": "Hoteles y complejos", "title": "Antes de la temporada: **7 controles** que no pueden fallar", "size": 96, "chips": [["Hotelería", "cama"]]},
+    {"tpl": "items", "theme": "claro", "eti": "Agua y confort", "items": [
+      {"num": "01", "icon": "pileta", "title": "Pileta", "text": "Sellos de la bomba, retrolavado del filtro y estado del dosificador de cloro."},
+      {"num": "02", "icon": "llama", "title": "Calderas y termotanques", "text": "Limpieza de quemadores, válvulas de seguridad y purga del sistema."},
+      {"num": "03", "icon": "copo", "title": "Aire acondicionado", "text": "Filtros y serpentinas limpios, drenajes libres y prueba en cada unidad."}
+    ]},
+    {"tpl": "items", "theme": "claro", "eti": "Instalaciones", "items": [
+      {"num": "04", "icon": "rayo", "title": "Tablero eléctrico", "text": "Ajuste de borneras, prueba de disyuntores y diferenciales."},
+      {"num": "05", "icon": "gota", "title": "Bombas y tanques de agua", "text": "Presurizadoras, flotantes y limpieza de tanques."},
+      {"num": "06", "icon": "generador", "title": "Grupo electrógeno", "text": "Arranque de prueba con carga, combustible, batería y aceite."}
+    ]},
+    {"tpl": "items", "theme": "suave", "eti": "Seguridad", "items": [
+      {"num": "07", "icon": "escudo", "title": "Matafuegos, luces y señalización", "text": "Matafuegos con carga vigente, luces de emergencia probadas y salidas señalizadas."}
+    ], "title": "Y uno que no se negocia."},
+    {"tpl": "text", "theme": "noche", "icon": "calendario", "eti": "El consejo", "title": "Hacelo **ahora,** no en enero.", "body": ["En plena temporada un técnico o un repuesto tardan más en llegar, y cada día con una instalación fuera de servicio se nota en las reseñas."]},
+    {"tpl": "cta", "theme": "violeta", "eti": "Guardalo", "title": "Compartilo con **quien hace el mantenimiento.**", "pill": "Guardar el checklist"}
+  ]
+}

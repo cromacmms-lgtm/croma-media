@@ -1,0 +1,23 @@
+{
+  "slug": "2026-10-28-tiempo-o-uso",
+  "format": "carousel",
+  "date": "2026-10-28T10:05:00",
+  "caption": "¿Preventivo por tiempo o por uso?\n\nNo da lo mismo. Si un equipo se desgasta por las horas que trabaja y lo mantenés por calendario, en temporada alta llega tarde al servicio. Y al revés: hay controles que vencen aunque el equipo no se use.\n\nLa regla práctica: lo que ocurra primero. Y para eso hace falta registrar las horas reales, no solo la fecha.\n\nGuardalo para cuando armes tu plan de mantenimiento.\n\n#mantenimientopreventivo #mantenimientoindustrial #planificación #CMMS #Córdoba",
+  "slides": [
+    {"tpl": "cover", "theme": "claro", "deco": "icon", "icon": "reloj", "eti": "Plan de mantenimiento", "title": "¿Preventivo por tiempo o **por uso?**", "sub": "Cuál conviene para cada equipo, y por qué no da lo mismo."},
+    {"tpl": "items", "theme": "suave", "eti": "Por tiempo", "title": "Se hace cada X días, semanas o meses, **trabaje o no el equipo.**", "size": 58, "items": [
+      {"icon": "calendario", "title": "Cuándo conviene", "text": "Cuando el desgaste depende del paso del tiempo y no del uso."},
+      {"icon": "escudo", "title": "Ejemplos", "text": "Matafuegos, tableros eléctricos, aire acondicionado, inspecciones y controles legales."}
+    ]},
+    {"tpl": "items", "theme": "suave", "eti": "Por uso", "title": "Se hace cada X horas, ciclos o km, **según cuánto trabaje.**", "size": 58, "items": [
+      {"icon": "reloj", "title": "Cuándo conviene", "text": "Cuando el desgaste depende de cuánto trabaja el equipo."},
+      {"icon": "tractor", "title": "Ejemplos", "text": "Compresores y motores (horas), tractores y cosechadoras (horas de motor), vehículos (km), prensas (golpes)."}
+    ]},
+    {"tpl": "example", "theme": "noche", "eti": "El error más común", "title": "Mantener **por calendario** lo que se gasta **por uso.**", "lead": "Un compresor con cambio de aceite cada 2.000 h de funcionamiento:", "results": [
+      {"label": "Trabajando 8 h/día", "calc": "2.000 h ÷ 8 h", "value": "250", "unit": "días"},
+      {"label": "Trabajando 16 h/día", "calc": "2.000 h ÷ 16 h", "value": "125", "unit": "días"}
+    ], "note": "Mismo equipo, mismo servicio: en temporada alta toca el doble de seguido."},
+    {"tpl": "text", "theme": "claro", "icon": "check", "eti": "La regla práctica", "title": "Lo que **ocurra primero.**", "body": ["Muchos fabricantes indican las dos cosas: por ejemplo, cada 500 h o cada 6 meses.", "Para cumplirlo hay que registrar las horas reales de cada equipo, no solo la fecha del último servicio."]},
+    {"tpl": "cta", "theme": "violeta", "eti": "Guardalo", "title": "Te sirve para **armar tu plan.**", "pill": "Guardar para después", "body": "¿Tenés dudas con algún equipo? Escribinos."}
+  ]
+}

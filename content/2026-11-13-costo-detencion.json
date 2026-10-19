@@ -1,0 +1,22 @@
+{
+  "slug": "2026-11-13-costo-detencion",
+  "format": "carousel",
+  "date": "2026-11-13T10:05:00",
+  "caption": "¿Cuánto te cuesta una hora de equipo detenido?\n\nCasi siempre se cuenta solo la reparación: repuesto y mano de obra. Pero lo caro es lo que no se ve: producción perdida, personal esperando, horas extra para recuperar, entregas atrasadas y compras urgentes.\n\nHacé la cuenta con tus números. Cuando la ves completa, el preventivo deja de parecer un gasto.\n\nSi querés, te ayudamos a calcularlo: escribinos por DM.\n\n#mantenimiento #costos #productividad #pymes #industria #mantenimientoindustrial #Córdoba",
+  "slides": [
+    {"tpl": "cover", "theme": "violeta", "deco": "icon", "icon": "moneda", "eti": "Costos de mantenimiento", "title": "¿Cuánto te cuesta **una hora** de equipo detenido?", "sub": "Casi siempre, más de lo que parece."},
+    {"tpl": "items", "theme": "claro", "eti": "Lo que se ve", "title": "La reparación.", "items": [
+      {"icon": "caja", "title": "Repuestos", "text": "Lo que se cambió para volver a arrancar."},
+      {"icon": "llave", "title": "Mano de obra", "text": "Las horas del técnico que intervino."}
+    ]},
+    {"tpl": "items", "theme": "suave", "eti": "Lo que no se ve", "title": "Todo lo demás.", "pad": 32, "items": [
+      {"icon": "grafico", "title": "Producción perdida", "text": "Lo que la línea dejó de producir."},
+      {"icon": "persona", "title": "Personal esperando", "text": "Operarios que cobran sin producir."},
+      {"icon": "reloj", "title": "Horas extra", "text": "Para recuperar lo atrasado."},
+      {"icon": "carrito", "title": "Compras urgentes", "text": "Repuestos y envíos más caros por apuro."}
+    ]},
+    {"tpl": "formula", "theme": "noche", "eti": "Hacé la cuenta", "title": "El costo **real** por hora.", "lead": "Sumá todo lo que pasa mientras el equipo está fuera de servicio.", "name": "$/h", "num": "Producción perdida + personal parado + horas extra + urgencias", "den": "Horas de detención"},
+    {"tpl": "text", "theme": "claro", "icon": "tendencia", "eti": "La conclusión", "title": "El preventivo cuesta **menos que la detención.**", "body": ["Cuando ves el número completo, programar el mantenimiento deja de parecer un gasto y pasa a ser la inversión más rentable de la planta."]},
+    {"tpl": "cta", "theme": "violeta", "eti": "Te ayudamos", "title": "¿Calculamos **tu costo** juntos?", "body": "Escribinos y lo hacemos con los números de tu planta."}
+  ]
+}

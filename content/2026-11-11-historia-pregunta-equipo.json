@@ -1,0 +1,20 @@
+{
+ "slug": "2026-11-11-historia-pregunta-equipo",
+ "format": "story",
+ "date": "2026-11-11T18:05:00",
+ "story": {
+  "theme": "noche",
+  "kind": "question",
+  "eti": "Pregunta rápida",
+  "title": "¿Qué equipo te da **más dolores de cabeza?**",
+  "size": 88,
+  "options": [
+   "Compresores",
+   "Bombas",
+   "Calderas o termotanques",
+   "Vehículos y maquinaria"
+  ],
+  "cta": "Respondé por DM",
+  "ring": false
+ }
+}

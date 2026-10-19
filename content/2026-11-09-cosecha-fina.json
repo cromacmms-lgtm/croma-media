@@ -1,0 +1,21 @@
+{
+  "slug": "2026-11-09-cosecha-fina",
+  "format": "carousel",
+  "date": "2026-11-09T10:05:00",
+  "caption": "Cosecha fina a la vuelta de la esquina.\n\nUna cosechadora detenida en plena campaña cuesta mucho más que una revisión hoy: tiempo de cosecha perdido, el lote esperando y repuestos que en temporada tardan más en llegar.\n\nTe dejamos 6 controles para hacer antes de entrar al lote. Y un consejo: llevá registro de las horas de motor, así sabés cuándo toca cada servicio aunque cambie el operador.\n\nGuardalo y pasáselo a tu contratista o a quien maneja la máquina.\n\n#agro #cosecha #cosechafina #maquinariaagrícola #mantenimiento #Córdoba #campo",
+  "slides": [
+    {"tpl": "cover", "theme": "claro", "deco": "icon", "icon": "tractor", "eti": "Agro · Cosecha fina", "title": "6 controles a la cosechadora **antes de entrar al lote.**", "size": 92, "chips": [["Agro", "tractor"]]},
+    {"tpl": "items", "theme": "suave", "eti": "Corte y transmisión", "items": [
+      {"num": "01", "icon": "cuchilla", "title": "Plataforma de corte", "text": "Cuchillas, puntones y molinete. Reemplazá las secciones gastadas."},
+      {"num": "02", "icon": "correa", "title": "Correas y cadenas", "text": "Tensión, desgaste y alineación de poleas."},
+      {"num": "03", "icon": "filtro", "title": "Filtros y fluidos", "text": "Aire, combustible, aceite de motor e hidráulico."}
+    ]},
+    {"tpl": "items", "theme": "suave", "eti": "Motor y seguridad", "items": [
+      {"num": "04", "icon": "engranaje", "title": "Rodamientos y engrase", "text": "Todos los puntos de lubricación del manual. Atención a ruidos y temperatura."},
+      {"num": "05", "icon": "termometro", "title": "Refrigeración", "text": "Radiador y tamiz limpios: el rastrojo los tapa rápido."},
+      {"num": "06", "icon": "llama", "title": "Prevención de incendios", "text": "Limpieza de residuos en motor y escape, matafuegos cargados."}
+    ]},
+    {"tpl": "text", "theme": "noche", "icon": "reloj", "eti": "El consejo", "title": "Llevá registro de las **horas de motor.**", "body": ["Así sabés cuándo toca cada servicio, aunque cambie el operador o la máquina pase por varios lotes."]},
+    {"tpl": "cta", "theme": "violeta", "eti": "Guardalo", "title": "Pasáselo a **quien maneja la máquina.**", "pill": "Guardar el checklist"}
+  ]
+}
