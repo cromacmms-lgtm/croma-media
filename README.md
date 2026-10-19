@@ -6,7 +6,7 @@ Este repositorio guarda las piezas que se publican en el Instagram de CROMA (@cr
 
 1. Cada pieza se describe en `content/<fecha>-<tema>.json`: formato (`carousel`, `story`, `reel`), fecha y hora, texto del posteo y slides.
 2. `python3 engine/croma.py content/<archivo>.json` arma las slides con el sistema de diseño de CROMA y las guarda en `media/<slug>/NN.jpg` (publicaciones 1080×1350, historias 1080×1920). Necesita Node con `playwright` (`npm i playwright`) y un Chromium; si hay uno preinstalado, se usa solo.
-3. Se suben a `main` y Metricool las toma desde `https://raw.githubusercontent.com/cromacmms-lgtm/croma-media/main/media/<slug>/NN.jpg`.
+3. Se suben a `main` y Metricool las toma desde `https://raw.githubusercontent.com/cromacmms-lgtm/croma-media/<sha-del-commit>/media/<slug>/NN.jpg` (con el SHA del commit, no `main`, para que nunca tome una versión vieja en caché). Si se corrige una pieza ya programada, hay que actualizar la publicación en Metricool: guarda su propia copia al programar. Metricool cambia el id de una publicación cada vez que se actualiza; el uuid se mantiene.
 4. Se programan en Metricool (marca `cromacmms`, id 7520428, zona `America/Buenos_Aires`) con publicación automática. `calendario.json` registra qué está programado.
 
 ## Ritmo
