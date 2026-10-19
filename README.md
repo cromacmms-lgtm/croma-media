@@ -27,7 +27,7 @@ Este repositorio guarda las piezas que se publican en el Instagram de CROMA (@cr
 
 ## Pilares de contenido
 
-1. **Valor de gestionar el mantenimiento con software** (sin mostrar el producto): comparaciones sin sistema / con sistema, impacto en organización, tiempo y dinero, costo de las detenciones, indicadores. Inspirarse en cómo comunican los mejores CMMS del mundo (MaintainX, UpKeep, Limble, Fracttal): datos concretos con fuente, comparaciones claras, tono directo.
+1. **Qué mejora en una empresa con un software de mantenimiento** (sin mostrar el producto): comparaciones sin sistema / con software en organización, planificación, trazabilidad, comunicación, seguridad, vida útil de los equipos y decisiones. El foco es la mejora de la empresa, no "cuánto se gana". Inspirarse en cómo comunican los mejores CMMS del mundo (MaintainX, UpKeep, Limble, Fracttal): datos concretos con fuente, comparaciones claras, tono directo.
 2. **Tips técnicos útiles** por rubro y temporada.
 3. **Marca:** quiénes somos, del piso de planta, frases propias. Sin fotos de personas: solo la marca.
 

@@ -13,7 +13,7 @@
    "slug": "2026-10-20-presentacion",
    "formato": "carousel",
    "fecha": "2026-10-20T10:05:00",
-   "metricool_id": 400156880,
+   "metricool_id": 400166561,
    "estado": "programado"
   },
   {
@@ -24,24 +24,24 @@
    "estado": "programado"
   },
   {
-   "slug": "2026-10-24-historia-reel-senales",
+   "slug": "2026-10-24-historia-post-mejoras",
    "formato": "story",
    "fecha": "2026-10-24T18:05:00",
-   "metricool_id": 400157238,
+   "metricool_id": 400166488,
    "estado": "programado"
   },
   {
-   "slug": "2026-10-24-reel-5-senales",
-   "formato": "reel",
+   "slug": "2026-10-24-que-mejora-con-software",
+   "formato": "carousel",
    "fecha": "2026-10-24T10:05:00",
-   "metricool_id": 400157195,
+   "metricool_id": 400166452,
    "estado": "programado"
   },
   {
-   "slug": "2026-10-26-historia-pregunta-registro",
+   "slug": "2026-10-26-historia-pregunta-mejorar",
    "formato": "story",
    "fecha": "2026-10-26T18:05:00",
-   "metricool_id": 400157282,
+   "metricool_id": 400166523,
    "estado": "programado"
   },
   {

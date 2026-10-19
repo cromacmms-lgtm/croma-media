@@ -1,0 +1,159 @@
+{
+ "slug": "2026-10-24-que-mejora-con-software",
+ "format": "carousel",
+ "date": "2026-10-24T10:05:00",
+ "caption": "5 cosas que mejoran en una empresa cuando el mantenimiento se gestiona con un software.\n\n1. Organización: cada pedido entra por un solo lugar y la prioridad la define lo crítico del equipo.\n2. Planificación: cada preventivo tiene fecha y responsable, y lo pendiente está a la vista.\n3. Trazabilidad: cada intervención queda registrada y el historial se queda en la empresa.\n4. Comunicación: técnico, jefe de mantenimiento y dueño ven lo que cada uno necesita.\n5. Decisiones: con indicadores reales, no por intuición.\n\nEl software no repara equipos: ordena la información para que tu gente trabaje y decida mejor.\n\n¿Qué te gustaría mejorar primero en tu empresa? Contanos por DM o escribinos a cromacmms@gmail.com\n\n#mantenimiento #CMMS #gestióndemantenimiento #mejoracontinua #industria #pymes #Córdoba",
+ "slides": [
+  {
+   "tpl": "cover",
+   "theme": "violeta",
+   "deco": "ring",
+   "eti": "Gestión de mantenimiento",
+   "title": "5 cosas que **mejoran** en una empresa con un software de mantenimiento",
+   "size": 80,
+   "sub": "Comparado lado a lado."
+  },
+  {
+   "tpl": "compare",
+   "theme": "claro",
+   "eti": "01 · Organización",
+   "title": "Del desorden **al orden.**",
+   "a": {
+    "name": "Sin sistema",
+    "icon": "alerta",
+    "mark": "x",
+    "list": [
+     "Pedidos que llegan por cualquier canal",
+     "Prioridad para el que más insiste",
+     "Cada uno trabaja a su manera"
+    ]
+   },
+   "b": {
+    "name": "Con software",
+    "icon": "checklist",
+    "list": [
+     "Todo pedido entra por un solo lugar",
+     "Prioridad según lo crítico del equipo",
+     "Un mismo criterio para todos"
+    ]
+   }
+  },
+  {
+   "tpl": "compare",
+   "theme": "suave",
+   "eti": "02 · Planificación",
+   "title": "Lo importante **deja de postergarse.**",
+   "a": {
+    "name": "Sin sistema",
+    "icon": "reloj",
+    "mark": "x",
+    "list": [
+     "El preventivo depende de la memoria",
+     "Lo urgente tapa a lo importante",
+     "Nadie sabe qué quedó pendiente"
+    ]
+   },
+   "b": {
+    "name": "Con software",
+    "icon": "calendario",
+    "list": [
+     "Cada preventivo con fecha y responsable",
+     "Urgente y planificado, en orden",
+     "Lo pendiente, a la vista"
+    ]
+   }
+  },
+  {
+   "tpl": "compare",
+   "theme": "claro",
+   "eti": "03 · Trazabilidad",
+   "title": "Todo queda **registrado.**",
+   "a": {
+    "name": "Sin sistema",
+    "icon": "lupa",
+    "mark": "x",
+    "list": [
+     "No se sabe quién hizo qué ni cuándo",
+     "Auditorías armadas a último momento",
+     "El conocimiento se va con la persona"
+    ]
+   },
+   "b": {
+    "name": "Con software",
+    "icon": "libro",
+    "list": [
+     "Cada intervención queda registrada",
+     "Registros listos para auditar",
+     "El historial se queda en la empresa"
+    ]
+   }
+  },
+  {
+   "tpl": "compare",
+   "theme": "suave",
+   "eti": "04 · Comunicación",
+   "title": "Todos hablan **el mismo idioma.**",
+   "a": {
+    "name": "Sin sistema",
+    "icon": "mensaje",
+    "mark": "x",
+    "list": [
+     "Pedidos de boca en boca",
+     "El técnico no conoce la prioridad",
+     "El dueño se entera tarde"
+    ]
+   },
+   "b": {
+    "name": "Con software",
+    "icon": "persona",
+    "list": [
+     "El pedido llega con toda la información",
+     "Prioridades claras para todos",
+     "Cada nivel ve lo que necesita"
+    ]
+   }
+  },
+  {
+   "tpl": "compare",
+   "theme": "claro",
+   "eti": "05 · Decisiones",
+   "title": "De la intuición **a los datos.**",
+   "a": {
+    "name": "Sin sistema",
+    "icon": "alerta",
+    "mark": "x",
+    "list": [
+     "Se decide por intuición",
+     "No se sabe qué equipo falla más",
+     "Reemplazos y compras a ciegas"
+    ]
+   },
+   "b": {
+    "name": "Con software",
+    "icon": "grafico",
+    "list": [
+     "Indicadores reales: MTTR, MTBF, cumplimiento",
+     "Se ve qué equipo da más problemas",
+     "Inversiones con información"
+    ]
+   }
+  },
+  {
+   "tpl": "text",
+   "theme": "noche",
+   "icon": "persona",
+   "eti": "Lo que no cambia",
+   "title": "El software no repara equipos. **Tu gente sí.**",
+   "body": [
+    "Lo que hace es ordenar la información para que cada uno trabaje y decida mejor: el técnico, el jefe de mantenimiento y el dueño."
+   ]
+  },
+  {
+   "tpl": "cta",
+   "theme": "violeta",
+   "eti": "Contanos",
+   "title": "¿Qué te gustaría **mejorar primero?**",
+   "body": "Escribinos y lo charlamos con la realidad de tu empresa."
+  }
+ ]
+}
