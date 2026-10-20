@@ -11,9 +11,10 @@ Este repositorio guarda las piezas que se publican en el Instagram de CROMA (@cr
 
 ## Ritmo
 
-- Una publicación cada 4 días, a las 10:05 (pico de audiencia según Metricool).
-- Una historia cada 2 días, a las 18:05.
-- La historia del día de una publicación la anuncia ("Nuevo post").
+- Publicaciones martes y jueves a las 10:05 (pico de audiencia según Metricool).
+- Esos mismos días, dos historias: 18:05 y 18:10. La primera anuncia la publicación ("Nuevo post").
+- Si las fechas se mueven a mano en Metricool, se respeta lo que quedó: antes de programar, mirar qué hay.
+- Cada pieza programada tiene su evento en Google Calendar con qué dice y el id de Metricool.
 
 ## Reglas de contenido
 

@@ -3,6 +3,14 @@
  "zona": "America/Buenos_Aires",
  "piezas": [
   {
+   "slug": "2026-10-20-presentacion",
+   "formato": "carousel",
+   "fecha": "2026-10-20T11:20:00",
+   "metricool_id": 401141030,
+   "estado": "programado",
+   "nota": "Republicada con soporte@cromacmms.com; la versión de las 10:05 con el mail anterior fue borrada."
+  },
+  {
    "slug": "2026-10-20-historia-nosotros",
    "formato": "story",
    "fecha": "2026-10-20T18:05:00",
@@ -10,144 +18,138 @@
    "estado": "programado"
   },
   {
-   "slug": "2026-10-20-presentacion",
-   "formato": "carousel",
-   "fecha": "2026-10-20T10:05:00",
-   "metricool_id": 400166561,
-   "estado": "programado"
-  },
-  {
    "slug": "2026-10-22-historia-hablemos",
    "formato": "story",
-   "fecha": "2026-10-22T18:05:00",
-   "metricool_id": 400157119,
-   "estado": "programado"
-  },
-  {
-   "slug": "2026-10-24-historia-post-mejoras",
-   "formato": "story",
-   "fecha": "2026-10-24T18:05:00",
-   "metricool_id": 400168336,
+   "fecha": "2026-10-20T18:10:00",
+   "metricool_id": 401135937,
    "estado": "programado"
   },
   {
    "slug": "2026-10-24-que-mejora-con-software",
    "formato": "carousel",
-   "fecha": "2026-10-24T10:05:00",
-   "metricool_id": 400168292,
+   "fecha": "2026-10-22T10:05:00",
+   "metricool_id": 401135292,
+   "estado": "programado"
+  },
+  {
+   "slug": "2026-10-24-historia-post-mejoras",
+   "formato": "story",
+   "fecha": "2026-10-22T18:05:00",
+   "metricool_id": 400185723,
    "estado": "programado"
   },
   {
    "slug": "2026-10-26-historia-pregunta-mejorar",
    "formato": "story",
-   "fecha": "2026-10-26T18:05:00",
-   "metricool_id": 400166523,
-   "estado": "programado"
-  },
-  {
-   "slug": "2026-10-28-historia-post-tiempo-uso",
-   "formato": "story",
-   "fecha": "2026-10-28T18:05:00",
-   "metricool_id": 400157453,
+   "fecha": "2026-10-22T18:10:00",
+   "metricool_id": 400185748,
    "estado": "programado"
   },
   {
    "slug": "2026-10-28-tiempo-o-uso",
    "formato": "carousel",
-   "fecha": "2026-10-28T10:05:00",
-   "metricool_id": 400157418,
+   "fecha": "2026-10-27T10:05:00",
+   "metricool_id": 401135410,
+   "estado": "programado"
+  },
+  {
+   "slug": "2026-10-28-historia-post-tiempo-uso",
+   "formato": "story",
+   "fecha": "2026-10-27T18:05:00",
+   "metricool_id": 400185787,
    "estado": "programado"
   },
   {
    "slug": "2026-10-30-historia-tip-senales",
    "formato": "story",
-   "fecha": "2026-10-30T18:05:00",
-   "metricool_id": 400157593,
-   "estado": "programado"
-  },
-  {
-   "slug": "2026-11-01-historia-post-hoteles",
-   "formato": "story",
-   "fecha": "2026-11-01T18:05:00",
-   "metricool_id": 400157785,
+   "fecha": "2026-10-27T18:10:00",
+   "metricool_id": 400185812,
    "estado": "programado"
   },
   {
    "slug": "2026-11-01-temporada-hoteles",
    "formato": "carousel",
-   "fecha": "2026-11-01T10:05:00",
-   "metricool_id": 400157734,
+   "fecha": "2026-10-29T10:05:00",
+   "metricool_id": 401135544,
+   "estado": "programado"
+  },
+  {
+   "slug": "2026-11-01-historia-post-hoteles",
+   "formato": "story",
+   "fecha": "2026-10-29T18:05:00",
+   "metricool_id": 400185847,
    "estado": "programado"
   },
   {
    "slug": "2026-11-03-historia-tip-codigos",
    "formato": "story",
-   "fecha": "2026-11-03T18:05:00",
-   "metricool_id": 400157833,
-   "estado": "programado"
-  },
-  {
-   "slug": "2026-11-05-historia-post-mttr",
-   "formato": "story",
-   "fecha": "2026-11-05T18:05:00",
-   "metricool_id": 400158030,
+   "fecha": "2026-10-29T18:10:00",
+   "metricool_id": 400185890,
    "estado": "programado"
   },
   {
    "slug": "2026-11-05-mttr-mtbf",
    "formato": "carousel",
-   "fecha": "2026-11-05T10:05:00",
-   "metricool_id": 400157991,
+   "fecha": "2026-11-03T10:05:00",
+   "metricool_id": 401135681,
+   "estado": "programado"
+  },
+  {
+   "slug": "2026-11-05-historia-post-mttr",
+   "formato": "story",
+   "fecha": "2026-11-03T18:05:00",
+   "metricool_id": 400185935,
    "estado": "programado"
   },
   {
    "slug": "2026-11-07-historia-frase-preventivo",
    "formato": "story",
-   "fecha": "2026-11-07T18:05:00",
-   "metricool_id": 400158086,
+   "fecha": "2026-11-03T18:10:00",
+   "metricool_id": 400185986,
    "estado": "programado"
   },
   {
    "slug": "2026-11-09-cosecha-fina",
    "formato": "carousel",
-   "fecha": "2026-11-09T10:05:00",
-   "metricool_id": 400158242,
+   "fecha": "2026-11-05T10:05:00",
+   "metricool_id": 401135793,
    "estado": "programado"
   },
   {
    "slug": "2026-11-09-historia-post-cosecha",
    "formato": "story",
-   "fecha": "2026-11-09T18:05:00",
-   "metricool_id": 400158280,
+   "fecha": "2026-11-05T18:05:00",
+   "metricool_id": 400186035,
    "estado": "programado"
   },
   {
    "slug": "2026-11-11-historia-pregunta-equipo",
    "formato": "story",
-   "fecha": "2026-11-11T18:05:00",
-   "metricool_id": 400158335,
+   "fecha": "2026-11-05T18:10:00",
+   "metricool_id": 400186069,
    "estado": "programado"
   },
   {
    "slug": "2026-11-13-costo-detencion",
    "formato": "carousel",
-   "fecha": "2026-11-13T10:05:00",
-   "metricool_id": 400158440,
+   "fecha": "2026-11-10T10:05:00",
+   "metricool_id": 401135891,
    "estado": "programado"
   },
   {
    "slug": "2026-11-13-historia-post-costo",
    "formato": "story",
-   "fecha": "2026-11-13T18:05:00",
-   "metricool_id": 400158490,
+   "fecha": "2026-11-10T18:05:00",
+   "metricool_id": 400186107,
    "estado": "programado"
   },
   {
    "slug": "2026-11-15-historia-demo",
    "formato": "story",
-   "fecha": "2026-11-15T18:05:00",
-   "metricool_id": 400158526,
+   "fecha": "2026-11-10T18:10:00",
+   "metricool_id": 401135976,
    "estado": "programado"
   }
- ]
+ ],
+ "ritmo": "Publicaciones martes y jueves 10:05; esos días, dos historias a las 18:05 y 18:10. Respetar lo que se mueva a mano en Metricool."
 }
