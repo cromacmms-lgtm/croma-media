@@ -216,7 +216,7 @@ def tpl_cta(s, t, n, N):
     deco = ring(t, 860, 'bottom:-300px;right:-360px')
     contacts = (f'<div style="display:flex;flex-direction:column;gap:22px;margin-top:52px">'
                 f'<div style="display:flex;align-items:center;gap:20px;font:600 36px/1 Sora">{ico("mensaje", t["acc"], 48, 1.7)}DM a @cromacmms</div>'
-                f'<div style="display:flex;align-items:center;gap:20px;font:600 36px/1 Sora">{ico("mail", t["acc"], 48, 1.7)}cromacmms@gmail.com</div></div>')
+                f'<div style="display:flex;align-items:center;gap:20px;font:600 36px/1 Sora">{ico("mail", t["acc"], 48, 1.7)}soporte@cromacmms.com</div></div>')
     save = (f'<div style="display:inline-flex;align-items:center;gap:16px;margin-top:56px;height:96px;padding:0 44px;border-radius:999px;background:{t["pill"]};color:{t["pillink"]};font:700 36px/1 Sora">'
             f'{ico(s.get("pillicon", "libro"), t["pillink"], 40, 2)}{html.escape(s["pill"])}</div>') if s.get('pill') else ''
     body = (f'<div style="position:absolute;left:80px;right:80px;top:80px;display:flex;justify-content:flex-end"><span class="mono" style="color:{t["muted"]}">{n:02d}/{N:02d}</span></div>'
@@ -253,7 +253,7 @@ def tpl_story(s, t):
     if s.get('contacts'):
         inner += (f'<div style="display:flex;flex-direction:column;gap:28px;margin-top:64px">'
                   f'<div style="display:flex;align-items:center;gap:22px;font:600 44px/1 Sora">{ico("mensaje", t["acc"], 56, 1.7)}DM a @cromacmms</div>'
-                  f'<div style="display:flex;align-items:center;gap:22px;font:600 44px/1 Sora">{ico("mail", t["acc"], 56, 1.7)}cromacmms@gmail.com</div></div>')
+                  f'<div style="display:flex;align-items:center;gap:22px;font:600 44px/1 Sora">{ico("mail", t["acc"], 56, 1.7)}soporte@cromacmms.com</div></div>')
     return story_frame(t, inner, deco)
 
 TPL = dict(cover=tpl_cover, brand=tpl_brand, text=tpl_text, items=tpl_items, formula=tpl_formula,

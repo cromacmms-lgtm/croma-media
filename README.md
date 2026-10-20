@@ -22,7 +22,7 @@ Este repositorio guarda las piezas que se publican en el Instagram de CROMA (@cr
 - **Nomenclatura correcta:** "detención", "falla", "fuera de servicio", "detención no planificada". Nunca "se para" ni "paró". "Equipo" en lugar de "máquina" cuando se habla en general.
 - **No mostrar el producto por dentro:** nada de pantallas, funciones, flujos ni KPIs del software. El contenido es educativo (tips, indicadores, checklists, costos) y de marca. El producto se muestra en la demo.
 - **Sin datos inventados:** si un número es un ejemplo, se dice "ejemplo ilustrativo". Coma decimal y punto de miles.
-- **Llamada a la acción:** DM a @cromacmms o cromacmms@gmail.com.
+- **Llamada a la acción:** DM a @cromacmms o soporte@cromacmms.com.
 - Sin emojis decorativos ni signos de exclamación dobles.
 
 ## Pilares de contenido
