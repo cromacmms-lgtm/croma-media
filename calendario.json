@@ -149,6 +149,27 @@
    "fecha": "2026-11-10T18:10:00",
    "metricool_id": 401135976,
    "estado": "programado"
+  },
+  {
+   "slug": "2026-11-12-parada-de-planta",
+   "formato": "carousel",
+   "fecha": "2026-11-12T10:05:00",
+   "metricool_id": 406544863,
+   "estado": "programado"
+  },
+  {
+   "slug": "2026-11-12-historia-post-parada",
+   "formato": "story",
+   "fecha": "2026-11-12T18:05:00",
+   "metricool_id": 406544887,
+   "estado": "programado"
+  },
+  {
+   "slug": "2026-11-12-historia-pregunta-parada",
+   "formato": "story",
+   "fecha": "2026-11-12T18:10:00",
+   "metricool_id": 406544914,
+   "estado": "programado"
   }
  ],
  "ritmo": "Publicaciones martes y jueves 10:05; esos días, dos historias a las 18:05 y 18:10. Respetar lo que se mueva a mano en Metricool."
