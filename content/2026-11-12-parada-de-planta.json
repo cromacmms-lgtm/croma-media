@@ -1,0 +1,26 @@
+{
+ "slug": "2026-11-12-parada-de-planta",
+ "format": "carousel",
+ "date": "2026-11-12T10:05:00",
+ "caption": "La parada de planta de enero se planifica en noviembre.\n\nMuchas plantas aprovechan las vacaciones de verano para hacer los trabajos que el resto del año no se pueden hacer con la línea en marcha. Pero si la lista se arma en diciembre, faltan repuestos, contratistas y tiempo.\n\nAntes: juntá todos los pendientes, priorizá lo crítico, pedí repuestos y confirmá contratistas.\nDurante: bloqueo y etiquetado en cada equipo, un responsable por trabajo y registro de lo que se hizo.\nDespués: revisá lo pendiente y actualizá el plan de preventivos.\n\nGuardalo y compartilo con quien coordina la parada.\n\n¿Querés ordenarla con tiempo? Escribinos por DM o a soporte@cromacmms.com\n\n#paradadeplanta #mantenimientoindustrial #planificación #seguridadindustrial #CMMS #industria #Córdoba",
+ "slides": [
+  {"tpl": "cover", "theme": "violeta", "deco": "icon", "icon": "engranaje", "eti": "Industria · Cierre de año", "title": "La parada de planta de enero **se planifica en noviembre.**", "size": 92, "sub": "Antes, durante y después."},
+  {"tpl": "text", "theme": "claro", "eti": "Por qué ahora", "title": "Seis semanas **pasan rápido.**", "body": ["Muchas plantas aprovechan las vacaciones de verano para hacer los trabajos que no se pueden hacer con la línea en marcha.", "Si la lista se arma en diciembre, faltan repuestos, contratistas y tiempo."]},
+  {"tpl": "items", "theme": "suave", "eti": "Antes de la parada", "title": "Armá la lista **con tiempo.**", "pad": 32, "items": [
+   {"num": "01", "icon": "checklist", "title": "Juntá los pendientes", "text": "Preventivos postergados, reparaciones provisorias y pedidos del año."},
+   {"num": "02", "icon": "alerta", "title": "Priorizá", "text": "Primero lo crítico para la seguridad y la producción."},
+   {"num": "03", "icon": "caja", "title": "Pedí los repuestos", "text": "Con fecha de entrega confirmada antes de empezar."},
+   {"num": "04", "icon": "persona", "title": "Confirmá contratistas", "text": "Fechas y alcance de cada trabajo, por escrito."}
+  ]},
+  {"tpl": "items", "theme": "claro", "eti": "Durante la parada", "title": "Orden y **seguridad.**", "items": [
+   {"icon": "escudo", "title": "Bloqueo y etiquetado", "text": "Cada equipo intervenido, aislado y señalizado antes de tocarlo."},
+   {"icon": "persona", "title": "Un responsable por trabajo", "text": "Que nadie suponga que lo hace otro."},
+   {"icon": "libro", "title": "Registro de lo que se hizo", "text": "Qué se cambió, qué se midió y qué quedó pendiente."}
+  ]},
+  {"tpl": "compare", "theme": "suave", "eti": "La diferencia", "title": "Una parada **sin sorpresas.**", 
+   "a": {"name": "Sin sistema", "icon": "alerta", "mark": "x", "list": ["La lista vive en un cuaderno o en un Excel", "El faltante aparece el día de la parada", "Lo que se hizo no queda registrado"]},
+   "b": {"name": "Con software", "icon": "checklist", "list": ["Todos los trabajos en un lugar, con responsable", "Lo que hace falta, identificado antes", "Cada intervención, en el historial del equipo"]}},
+  {"tpl": "text", "theme": "noche", "icon": "tendencia", "eti": "Después", "title": "La parada no termina **cuando arranca la línea.**", "size": 72, "body": ["Revisá lo que quedó pendiente, actualizá el plan de preventivos y anotá qué aprenderías para la próxima. Ese registro es lo que hace que cada parada salga mejor que la anterior."]},
+  {"tpl": "cta", "theme": "violeta", "eti": "Hablemos", "title": "¿Ya tenés **la lista** de tu parada?", "body": "Escribinos y te ayudamos a ordenarla con tiempo."}
+ ]
+}
