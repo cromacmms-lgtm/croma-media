@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Sora;font-weight:400;src:url(../../engine/fonts/sora-latin-400-normal.woff2)}
+@font-face{font-family:Sora;font-weight:600;src:url(../../engine/fonts/sora-latin-600-normal.woff2)}
+@font-face{font-family:Sora;font-weight:700;src:url(../../engine/fonts/sora-latin-700-normal.woff2)}
+@font-face{font-family:Sora;font-weight:400;src:url(../../engine/fonts/sora-latin-ext-400-normal.woff2);unicode-range:U+0100-024F,U+2212}
+@font-face{font-family:Sora;font-weight:600;src:url(../../engine/fonts/sora-latin-ext-600-normal.woff2);unicode-range:U+0100-024F,U+2212}
+@font-face{font-family:Sora;font-weight:700;src:url(../../engine/fonts/sora-latin-ext-700-normal.woff2);unicode-range:U+0100-024F,U+2212}
+@font-face{font-family:JBM;font-weight:500;src:url(../../engine/fonts/jetbrains-mono-latin-500-normal.woff2)}
+*{box-sizing:border-box;margin:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#120f1e;font-family:Sora,sans-serif;color:#f7f3ff}
+.abs{position:absolute}
+#bg{position:absolute;inset:0;overflow:hidden}
+.blob{position:absolute;border-radius:50%;filter:blur(90px)}
+.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(189,168,227,.07) 2px,transparent 2px),linear-gradient(90deg,rgba(189,168,227,.07) 2px,transparent 2px);background-size:80px 80px}
+.ring{position:absolute;border-radius:50%;border:64px solid #bda8e3}
+.hd{position:absolute;left:0;right:0;text-align:center}
+.eti{font:500 30px/40px JBM,monospace;letter-spacing:.18em;color:#bda8e3;text-transform:uppercase}
+.ttl{font:700 92px/100px Sora;letter-spacing:-.025em}
+#screen{position:absolute;left:24px;top:610px;width:1032px;height:688px;border-radius:30px;overflow:hidden;
+  background:linear-gradient(140deg,rgba(255,255,255,.16),rgba(255,255,255,.05) 55%,rgba(255,255,255,.09));
+  border:2px solid rgba(255,255,255,.24);box-shadow:0 50px 140px rgba(0,0,0,.55),inset 0 2px 0 rgba(255,255,255,.22);
+  -webkit-backdrop-filter:blur(30px) saturate(160%);backdrop-filter:blur(30px) saturate(160%);transform-origin:50% 50%}
+#ui{position:absolute;left:0;top:0;width:1500px;height:1000px;transform:scale(.688);transform-origin:0 0}
+.top{position:absolute;left:0;top:0;width:1500px;height:96px;border-bottom:1.5px solid rgba(255,255,255,.12)}
+.side{position:absolute;left:0;top:96px;width:250px;height:904px;border-right:1.5px solid rgba(255,255,255,.12)}
+.nav{position:absolute;left:18px;width:214px;height:54px;display:flex;align-items:center;gap:14px;padding-left:18px;font:400 21px/1 Sora;color:#c4bbd9;z-index:2}
+.nav svg{flex:none}
+#pill{position:absolute;left:18px;width:214px;height:54px;border-radius:16px;background:rgba(189,168,227,.20);border:1.5px solid rgba(189,168,227,.35)}
+.srch{position:absolute;left:420px;top:24px;width:560px;height:48px;border-radius:24px;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.12);display:flex;align-items:center;gap:12px;padding-left:20px;font:400 19px/1 Sora;color:#a99fc4}
+.view{position:absolute;inset:0}
+.h1{position:absolute;left:270px;top:124px;font:700 40px/48px Sora;color:#fff}
+.h2{position:absolute;left:270px;top:178px;font:400 21px/28px Sora;color:#c4bbd9}
+.card{position:absolute;border-radius:24px;background:linear-gradient(150deg,rgba(255,255,255,.11),rgba(255,255,255,.04));border:1.5px solid rgba(255,255,255,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}
+.kpi .lab{position:absolute;left:26px;top:24px;font:400 20px/24px Sora;color:#c4bbd9}
+.kpi .val{position:absolute;left:26px;top:60px;font:700 56px/60px Sora;color:#fff;letter-spacing:-.02em}
+.kpi .val small{font-size:28px;font-weight:600;color:#ece5fa;margin-left:2px}
+.kpi .foot{position:absolute;left:26px;right:26px;bottom:22px;font:400 17px/22px Sora;color:#c4bbd9;display:flex;align-items:center;gap:8px}
+.up{color:#4fc795;font-weight:600}
+.dot{display:inline-block;width:12px;height:12px;border-radius:50%}
+.bar{position:relative;width:100%;height:10px;border-radius:5px;background:rgba(255,255,255,.12);overflow:hidden}
+.bar b{position:absolute;left:0;top:0;bottom:0;border-radius:5px;background:#bda8e3}
+.ct{position:absolute;left:28px;top:24px;font:600 24px/30px Sora;color:#fff}
+.cs{position:absolute;left:28px;top:58px;font:400 18px/24px Sora;color:#a99fc4}
+.axis{font:400 17px Sora;fill:#a99fc4}
+.tag{position:absolute;padding:8px 14px;border-radius:12px;background:#fff;color:#2a1458;font:700 20px/1 Sora;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.row{position:absolute;left:20px;right:20px;height:88px;border-radius:18px;background:rgba(255,255,255,.05);display:flex;align-items:center;gap:16px;padding:0 16px}
+.ib{width:54px;height:54px;border-radius:15px;background:rgba(189,168,227,.14);border:1.5px solid rgba(189,168,227,.25);display:grid;place-items:center;flex:none}
+.ib.big{position:absolute;left:26px;top:26px;width:70px;height:70px;border-radius:19px}
+.rt{flex:1;min-width:0}
+.code{font:500 17px/22px JBM,monospace;letter-spacing:.06em;color:#bda8e3}
+.rn{font:600 21px/28px Sora;color:#fff}
+.chip{padding:9px 14px;border-radius:12px;font:600 17px/1 Sora;flex:none}
+.chip.warn{background:#3a2a0c;color:#f7cf7f}
+.chip.info{background:#1b2645;color:#a9c4f7}
+.eq .en{position:absolute;left:28px;top:146px;font:600 28px/36px Sora;color:#fff}
+.eq .ea{position:absolute;left:28px;top:186px;font:400 19px/24px Sora;color:#c4bbd9}
+.eq .disp{position:absolute;left:28px;right:28px;top:236px;display:flex;justify-content:space-between;font:400 17px/22px Sora;color:#c4bbd9}
+.eq .disp b{color:#fff;font-weight:600}
+.eqbar{position:absolute;left:28px;right:28px;top:270px;width:auto}
+.pill{position:absolute;right:22px;top:30px;display:flex;align-items:center;gap:9px;padding:9px 14px;border-radius:14px;font:600 17px/1 Sora}
+.pill i,.fchip i{display:inline-block;width:11px;height:11px;border-radius:50%}
+.pill.ok{background:#10301f;color:#8fe0bb} .pill.ok i,.fchip i.ok{background:#4fc795}
+.pill.bad{background:#3d1717;color:#f7a8a8} .pill.bad i,.fchip i.bad{background:#f07070}
+.pill.warn{background:#3a2a0c;color:#f7cf7f} .pill.warn i{background:#f0b240}
+.pill.off{background:#2e2350;color:#c4bbd9} .pill.off i,.fchip i.off{background:#8f84ad}
+.chips{position:absolute;left:270px;top:236px;display:flex;gap:12px}
+.fchip{display:flex;align-items:center;gap:9px;padding:12px 18px;border-radius:15px;background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.12);font:400 18px/1 Sora;color:#c4bbd9}
+.fchip b{color:#fff;font-weight:600}
+.fchip.on{background:rgba(189,168,227,.22);border-color:rgba(189,168,227,.4);color:#fff}
+.dc{position:absolute;left:45px;top:110px;width:380px;height:380px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.dc b{font:700 60px/64px Sora;color:#fff} .dc span{font:400 20px/26px Sora;color:#c4bbd9}
+.leg{position:absolute;left:0;right:0;display:flex;justify-content:center;align-items:center;gap:10px;font:400 18px/1 Sora;color:#ece5fa}
+.leg i{display:inline-block;width:14px;height:14px;border-radius:4px}
+.vb{position:absolute;border-radius:12px 12px 4px 4px;transform-origin:50% 100%}
+.vbl{position:absolute;text-align:center;font:400 17px/1 Sora;color:#a99fc4}
+#cursor{position:absolute;left:0;top:0;width:44px;height:44px;z-index:20;filter:drop-shadow(0 6px 10px rgba(0,0,0,.45))}
+#ripple{position:absolute;width:90px;height:90px;margin:-45px 0 0 -45px;border-radius:50%;border:4px solid #fff;z-index:19;opacity:0}
+.cap{position:absolute;left:60px;right:60px;top:1386px;text-align:center;font:700 62px/72px Sora;letter-spacing:-.02em;color:#fff}
+.cap em{font-style:normal;color:#bda8e3}
+#note{position:absolute;left:0;right:0;top:1320px;text-align:center;font:500 22px/30px JBM,monospace;letter-spacing:.06em;color:rgba(189,168,227,.75)}
+#end{position:absolute;left:0;right:0;top:0;height:1920px}
+.endl{position:absolute;left:0;right:0;text-align:center}
+</style></head><body>
+<div id="bg">
+  <div class="blob" id="b1" style="width:820px;height:820px;background:#7c4ddb;opacity:.55"></div>
+  <div class="blob" id="b2" style="width:900px;height:900px;background:#512974;opacity:.85"></div>
+  <div class="blob" id="b3" style="width:520px;height:520px;background:#bda8e3;opacity:.30"></div>
+  <div class="grid"></div>
+  <div class="ring" id="ring" style="width:560px;height:560px"></div>
+  <div class="abs" id="disc" style="width:330px;height:330px;border-radius:50%;background:#7c4ddb"></div>
+</div>
+
+<div class="hd eti" id="h0" style="top:286px">Nueva interfaz</div>
+<div class="hd ttl" id="h1" style="top:342px">Así se va a ver</div>
+<div class="hd ttl" id="h2" style="top:444px;color:#bda8e3">CROMA.</div>
+
+<div id="screen"><div id="ui">
+  <div class="top">
+    <img src="../../engine/logos/croma-logo-blanco.png" style="position:absolute;left:36px;top:30px;height:36px">
+    <div class="srch"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a99fc4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>Buscar equipo u orden de trabajo</div>
+    <div class="fchip" style="position:absolute;left:1150px;top:24px;padding:13px 18px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#bda8e3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V4.5A1.5 1.5 0 0 1 5.5 3h8A1.5 1.5 0 0 1 15 4.5V21M15 9h3.5A1.5 1.5 0 0 1 20 10.5V21M2.5 21h19M8 7h3M8 11h3M8 15h3M18 13h.01M18 17h.01"/></svg>Planta 1</div>
+    <div style="position:absolute;left:1322px;top:30px"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#ece5fa" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.8 1.8H4.2z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg><i style="position:absolute;right:2px;top:2px;width:12px;height:12px;border-radius:50%;background:#f07070"></i></div>
+    <div style="position:absolute;left:1392px;top:22px;width:52px;height:52px;border-radius:50%;background:rgba(189,168,227,.25);border:1.5px solid rgba(189,168,227,.45);display:grid;place-items:center"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7.5" r="3.5"/><path d="M5 20.5v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1"/></svg></div>
+  </div>
+  <div class="side"></div>
+  <div id="pill"></div>
+  <div class="nav" style="top:120px"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 11 12 4l8.5 7"/><path d="M5.5 9.5V20h13V9.5"/><path d="M10 20v-5h4v5"/></svg><span>Inicio</span></div><div class="nav" style="top:188px"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19.00 9.60 L21.41 10.09 L21.41 13.91 L19.00 14.40 L18.65 15.25 L20.00 17.30 L17.30 20.00 L15.25 18.65 L14.40 19.00 L13.91 21.41 L10.09 21.41 L9.60 19.00 L8.75 18.65 L6.70 20.00 L4.00 17.30 L5.35 15.25 L5.00 14.40 L2.59 13.91 L2.59 10.09 L5.00 9.60 L5.35 8.75 L4.00 6.70 L6.70 4.00 L8.75 5.35 L9.60 5.00 L10.09 2.59 L13.91 2.59 L14.40 5.00 L15.25 5.35 L17.30 4.00 L20.00 6.70 L18.65 8.75Z"/><circle cx="12" cy="12" r="3"/></svg><span>Equipos</span></div><div class="nav" style="top:256px"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="4.5" width="15" height="17" rx="2"/><path d="M9.5 3h5a1 1 0 0 1 1 1v1.5h-7V4a1 1 0 0 1 1-1zM8 11l1.5 1.5L12 10M14 11.5h2.5M8 16l1.5 1.5L12 15M14 16.5h2.5"/></svg><span>Órdenes</span></div><div class="nav" style="top:324px"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16.5" rx="2.5"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4M8 13.5h.01M12 13.5h.01M16 13.5h.01M8 17h.01M12 17h.01"/></svg><span>Calendario</span></div><div class="nav" style="top:392px"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18M7.5 16.5v-4M12 16.5V8.5M16.5 16.5v-7"/></svg><span>Indicadores</span></div>
+  <div class="view" id="vA">
+<div class="h1">Resumen de hoy</div><div class="h2">Martes 28 de octubre · Planta 1</div>
+<div class="card kpi a-in" id="ka0" style="left:270px;top:236px;width:285px;height:172px"><div class="lab">Disponibilidad</div><div class="val"><span id="k1">96,4</span><small> %</small></div><div class="foot"><span class="up">+1,2 pts</span> vs. septiembre</div></div><div class="card kpi a-in" id="ka1" style="left:577px;top:236px;width:285px;height:172px"><div class="lab">OT abiertas</div><div class="val"><span id="k2">12</span><small></small></div><div class="foot"><i class="dot" style="background:#f0b240"></i>3 en proceso</div></div><div class="card kpi a-in" id="ka2" style="left:884px;top:236px;width:285px;height:172px"><div class="lab">MTTR</div><div class="val"><span id="k3">2,1</span><small> h</small></div><div class="foot"><span class="up">−0,4 h</span> vs. septiembre</div></div><div class="card kpi a-in" id="ka3" style="left:1191px;top:236px;width:285px;height:172px"><div class="lab">Preventivos al día</div><div class="val"><span id="k4">94</span><small> %</small></div><div class="foot"><div class="bar"><b id="k4bar"></b></div></div></div>
+<div class="card a-in" id="ka4" style="left:270px;top:430px;width:730px;height:532px">
+  <div class="ct">Horas de detención no planificada</div><div class="cs">Últimas 8 semanas</div>
+  <svg width="730" height="470" style="position:absolute;left:0;top:60px" viewBox="0 0 730 470">
+    <defs><linearGradient id="ag" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bda8e3" stop-opacity=".45"/><stop offset="1" stop-color="#bda8e3" stop-opacity="0"/></linearGradient></defs>
+    <g stroke="rgba(255,255,255,.10)" stroke-width="1.5"><line x1="40" x2="690" y1="120.0" y2="120.0" /><line x1="40" x2="690" y1="210.0" y2="210.0" /><line x1="40" x2="690" y1="300.0" y2="300.0" /><line x1="40" x2="690" y1="390.0" y2="390.0" /></g>
+    <path id="carea" d="M40.0,390 L40.0,162.0 L132.9,144.0 L225.7,192.0 L318.6,216.0 L411.4,204.0 L504.3,246.0 L597.1,276.0 L690.0,294.0 L690.0,390 Z" fill="url(#ag)" opacity="0"/>
+    <polyline id="cline" points="40.0,162.0 132.9,144.0 225.7,192.0 318.6,216.0 411.4,204.0 504.3,246.0 597.1,276.0 690.0,294.0" fill="none" stroke="#bda8e3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>
+    <circle id="cdot" cx="690.0" cy="294.0" r="11" fill="#fff" stroke="#7c4ddb" stroke-width="5" opacity="0"/>
+    <text x="40" y="434" class="axis">Hace 8 semanas</text>
+    <text x="690" y="434" class="axis" text-anchor="end">Esta semana</text>
+  </svg>
+  <div class="tag" id="ctag" style="left:632px;top:282px">16 h</div>
+</div><div class="card a-in" id="ka5" style="left:1022px;top:430px;width:454px;height:532px"><div class="ct">Próximos preventivos</div><div class="row" id="pr0" style="top:96px"><div class="ib"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#bda8e3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19.00 9.60 L21.41 10.09 L21.41 13.91 L19.00 14.40 L18.65 15.25 L20.00 17.30 L17.30 20.00 L15.25 18.65 L14.40 19.00 L13.91 21.41 L10.09 21.41 L9.60 19.00 L8.75 18.65 L6.70 20.00 L4.00 17.30 L5.35 15.25 L5.00 14.40 L2.59 13.91 L2.59 10.09 L5.00 9.60 L5.35 8.75 L4.00 6.70 L6.70 4.00 L8.75 5.35 L9.60 5.00 L10.09 2.59 L13.91 2.59 L14.40 5.00 L15.25 5.35 L17.30 4.00 L20.00 6.70 L18.65 8.75Z"/><circle cx="12" cy="12" r="3"/></svg></div><div class="rt"><div class="code">COMP-01</div><div class="rn">Compresor de aire</div></div><div class="chip warn">Hoy</div></div><div class="row" id="pr1" style="top:200px"><div class="ib"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#bda8e3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5c.8 3 4.5 5 4.5 10a4.5 4.5 0 0 1-9 0c0-2.2 1-3.8 2.2-5 .1 2.2 1 3.3 2.3 3.3 0-3.2-1-5.6 0-8.3z"/><path d="M10.5 17a1.5 1.5 0 0 0 3 0c0-1.3-1.5-2.2-1.5-3.5-.8.8-1.5 2-1.5 3.5z"/></svg></div><div class="rt"><div class="code">CAL-01</div><div class="rn">Caldera</div></div><div class="chip info">Mañana</div></div><div class="row" id="pr2" style="top:304px"><div class="ib"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#bda8e3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3 4 6 7.3 6 11a6 6 0 0 1-12 0c0-3.7 3-7 6-11z"/><path d="M9 14.5a3 3 0 0 0 3 3"/></svg></div><div class="rt"><div class="code">BOM-03</div><div class="rn">Bomba de agua</div></div><div class="chip info">Jue 30</div></div><div class="row" id="pr3" style="top:408px"><div class="ib"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#bda8e3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 7.5 12 3l8.5 4.5v9L12 21l-8.5-4.5z"/><path d="M3.5 7.5 12 12l8.5-4.5M12 12v9"/></svg></div><div class="rt"><div class="code">LIN-02</div><div class="rn">Envasadora</div></div><div class="chip info">Vie 31</div></div></div></div><div class="view" id="vB">
+<div class="h1">Equipos</div><div class="h2">48 equipos · Planta 1</div>
+<div class="chips b-in" id="ebc"><div class="fchip on">Todos <b>48</b></div><div class="fchip "><i class=ok></i>En servicio <b>44</b></div><div class="fchip "><i class=bad></i>En falla <b>2</b></div><div class="fchip "><i class=off></i>Fuera de servicio <b>2</b></div></div><div class="card eq b-in " id="eb0" style="left:270px;top:300px;width:387px;height:320px"><div class="ib big"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#bda8e3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19.00 9.60 L21.41 10.09 L21.41 13.91 L19.00 14.40 L18.65 15.25 L20.00 17.30 L17.30 20.00 L15.25 18.65 L14.40 19.00 L13.91 21.41 L10.09 21.41 L9.60 19.00 L8.75 18.65 L6.70 20.00 L4.00 17.30 L5.35 15.25 L5.00 14.40 L2.59 13.91 L2.59 10.09 L5.00 9.60 L5.35 8.75 L4.00 6.70 L6.70 4.00 L8.75 5.35 L9.60 5.00 L10.09 2.59 L13.91 2.59 L14.40 5.00 L15.25 5.35 L17.30 4.00 L20.00 6.70 L18.65 8.75Z"/><circle cx="12" cy="12" r="3"/></svg></div><div class="pill ok"><i></i>En servicio</div><div class="code" style="position:absolute;left:28px;top:118px">COMP-01</div><div class="en">Compresor de aire</div><div class="ea">Sala de máquinas</div><div class="disp"><span>Disponibilidad</span><b>98 %</b></div><div class="bar eqbar"><b style="width:98%"></b></div></div><div class="card eq b-in hot" id="eb1" style="left:679px;top:300px;width:387px;height:320px"><div class="ib big"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#bda8e3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3 4 6 7.3 6 11a6 6 0 0 1-12 0c0-3.7 3-7 6-11z"/><path d="M9 14.5a3 3 0 0 0 3 3"/></svg></div><div class="pill bad"><i></i>En falla</div><div class="code" style="position:absolute;left:28px;top:118px">BOM-03</div><div class="en">Bomba de agua</div><div class="ea">Planta de tratamiento</div><div class="disp"><span>Disponibilidad</span><b>71 %</b></div><div class="bar eqbar"><b style="width:71%"></b></div></div><div class="card eq b-in " id="eb2" style="left:1088px;top:300px;width:387px;height:320px"><div class="ib big"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#bda8e3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5c.8 3 4.5 5 4.5 10a4.5 4.5 0 0 1-9 0c0-2.2 1-3.8 2.2-5 .1 2.2 1 3.3 2.3 3.3 0-3.2-1-5.6 0-8.3z"/><path d="M10.5 17a1.5 1.5 0 0 0 3 0c0-1.3-1.5-2.2-1.5-3.5-.8.8-1.5 2-1.5 3.5z"/></svg></div><div class="pill ok"><i></i>En servicio</div><div class="code" style="position:absolute;left:28px;top:118px">CAL-01</div><div class="en">Caldera</div><div class="ea">Servicios</div><div class="disp"><span>Disponibilidad</span><b>95 %</b></div><div class="bar eqbar"><b style="width:95%"></b></div></div><div class="card eq b-in " id="eb3" style="left:270px;top:642px;width:387px;height:320px"><div class="ib big"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#bda8e3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 7.5 12 3l8.5 4.5v9L12 21l-8.5-4.5z"/><path d="M3.5 7.5 12 12l8.5-4.5M12 12v9"/></svg></div><div class="pill warn"><i></i>Preventivo hoy</div><div class="code" style="position:absolute;left:28px;top:118px">LIN-02</div><div class="en">Envasadora</div><div class="ea">Línea 2</div><div class="disp"><span>Disponibilidad</span><b>92 %</b></div><div class="bar eqbar"><b style="width:92%"></b></div></div><div class="card eq b-in " id="eb4" style="left:679px;top:642px;width:387px;height:320px"><div class="ib big"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#bda8e3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="12" rx="2"/><path d="M12.8 8.5 9.8 12.6h3l-.9 3.4 3.3-4.6h-3.2z"/><path d="M6 18v2M18 18v2"/></svg></div><div class="pill ok"><i></i>En servicio</div><div class="code" style="position:absolute;left:28px;top:118px">GEN-01</div><div class="en">Generador</div><div class="ea">Exterior</div><div class="disp"><span>Disponibilidad</span><b>99 %</b></div><div class="bar eqbar"><b style="width:99%"></b></div></div><div class="card eq b-in " id="eb5" style="left:1088px;top:642px;width:387px;height:320px"><div class="ib big"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#bda8e3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.5h11v10h-11zM13.5 10h4.5l3.5 3.5v3h-8"/><circle cx="6.5" cy="17.5" r="2"/><circle cx="17" cy="17.5" r="2"/></svg></div><div class="pill off"><i></i>Fuera de servicio</div><div class="code" style="position:absolute;left:28px;top:118px">MON-01</div><div class="en">Montacargas</div><div class="ea">Depósito</div><div class="disp"><span>Disponibilidad</span><b>64 %</b></div><div class="bar eqbar"><b style="width:64%"></b></div></div></div><div class="view" id="vC">
+<div class="h1">Indicadores</div><div class="h2">Octubre · Planta 1</div>
+<div class="card kpi c-in" id="kc0" style="left:270px;top:236px;width:387px;height:150px"><div class="lab">MTBF</div><div class="val" style="top:52px"><span id="kcv0">312</span><small> h</small></div><div class="foot"><span class="up">+8 %</span> vs. septiembre</div></div><div class="card kpi c-in" id="kc1" style="left:679px;top:236px;width:387px;height:150px"><div class="lab">Cumplimiento del preventivo</div><div class="val" style="top:52px"><span id="kcv1">94</span><small> %</small></div><div class="foot"><span class="up">+6 pts</span> vs. septiembre</div></div><div class="card kpi c-in" id="kc2" style="left:1088px;top:236px;width:387px;height:150px"><div class="lab">OT cerradas</div><div class="val" style="top:52px"><span id="kcv2">86</span><small></small></div><div class="foot">en octubre</div></div>
+<div class="card c-in" id="kc3" style="left:270px;top:408px;width:470px;height:554px">
+ <div class="ct">Tipo de trabajo</div><div class="cs">Octubre</div>
+ <svg width="380" height="380" viewBox="0 0 380 380" style="position:absolute;left:45px;top:110px">
+  <circle cx="190" cy="190" r="150" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="46"/>
+  <circle id="dPrev" cx="190" cy="190" r="150" fill="none" stroke="#bda8e3" stroke-width="46" stroke-dasharray="0 942.5" transform="rotate(-90 190 190)"/>
+  <circle id="dCorr" cx="190" cy="190" r="150" fill="none" stroke="#7c4ddb" stroke-width="46" stroke-dasharray="0 942.5" transform="rotate(-90 190 190)"/>
+ </svg>
+ <div class="dc"><b id="dpct">68 %</b><span>preventivo</span></div>
+ <div class="leg" style="top:494px"><i style="background:#bda8e3"></i>Preventivo 68 %<i style="background:#7c4ddb;margin-left:26px"></i>Correctivo 32 %</div>
+</div><div class="card c-in" id="kc4" style="left:762px;top:408px;width:714px;height:554px"><div class="ct">OT cerradas por semana</div><div class="cs">Últimas 6 semanas</div><div style="position:absolute;left:0;top:60px;width:714px;height:494px"><div class="vb" id="vb0" style="left:60px;top:262px;width:70px;height:168px;background:rgba(189,168,227,.75)"></div><div class="vbl" style="left:60px;top:446px;width:70px">S1</div><div class="vb" id="vb1" style="left:166px;top:214px;width:70px;height:216px;background:rgba(189,168,227,.75)"></div><div class="vbl" style="left:166px;top:446px;width:70px">S2</div><div class="vb" id="vb2" style="left:272px;top:226px;width:70px;height:204px;background:rgba(189,168,227,.75)"></div><div class="vbl" style="left:272px;top:446px;width:70px">S3</div><div class="vb" id="vb3" style="left:378px;top:178px;width:70px;height:252px;background:rgba(189,168,227,.75)"></div><div class="vbl" style="left:378px;top:446px;width:70px">S4</div><div class="vb" id="vb4" style="left:484px;top:202px;width:70px;height:228px;background:rgba(189,168,227,.75)"></div><div class="vbl" style="left:484px;top:446px;width:70px">S5</div><div class="vb" id="vb5" style="left:590px;top:154px;width:70px;height:276px;background:#7c4ddb"></div><div class="vbl" style="left:590px;top:446px;width:70px">S6</div><div class="tag" id="vbt" style="left:584px;top:90px">23 OT</div></div></div></div>
+  <div id="ripple"></div>
+  <svg id="cursor" viewBox="0 0 24 24"><path d="M4 2.5 L4 19.5 L8.6 15.4 L11.6 22 L14.6 20.6 L11.7 14.2 L18 14.2 Z" fill="#fff" stroke="#120f1e" stroke-width="1.4" stroke-linejoin="round"/></svg>
+</div></div>
+
+<div id="note">Interfaz ilustrativa · datos de ejemplo</div>
+<div class="cap" id="capA">Simple para<br>el <em>técnico.</em></div>
+<div class="cap" id="capB">Clara para el <em>jefe<br>de mantenimiento.</em></div>
+<div class="cap" id="capC">Con los números<br>que <em>el dueño necesita.</em></div>
+
+<div id="end">
+  <img class="abs" id="elogo" src="../../engine/logos/croma-logo-blanco.png" style="left:290px;top:760px;width:500px">
+  <div class="endl ttl" id="e1" style="top:990px">Nueva interfaz.</div>
+  <div class="endl ttl" id="e2" style="top:1096px;color:#bda8e3">Muy pronto.</div>
+  <div class="endl eti" id="e3" style="top:1260px;letter-spacing:.08em;text-transform:none">@cromacmms</div>
+</div>
+
+<script>
+const DURATION = 15.0;
+const $ = id => document.getElementById(id);
+const cl = (v,a=0,b=1) => Math.min(b, Math.max(a, v));
+const P = (t,a,b) => cl((t-a)/(b-a));
+const io = x => x<.5 ? 4*x*x*x : 1-Math.pow(-2*x+2,3)/2;
+const oc = x => 1-Math.pow(1-x,3);
+const ob = x => {const c1=1.4,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2);};
+const L = (a,b,x) => a+(b-a)*x;
+function rise(el, t, a, d=0.6, dy=40){ const p=oc(P(t,a,a+d)); el.style.opacity=p; el.style.transform=`translateY(${(1-p)*dy}px)`; return p; }
+function vis(el, t, a, b, d=0.45, dy=36){ // aparece en a, se va en b
+  const pin=oc(P(t,a,a+d)), pout=io(P(t,b,b+d*.8)); el.style.opacity = pin*(1-pout);
+  el.style.transform=`translateY(${(1-pin)*dy - pout*dy*.6}px)`; }
+function fmt(v, dec){ return v.toFixed(dec).replace('.',','); }
+
+// cursor: [t, x, y] en coordenadas de la interfaz (1500x1000)
+const CK = [[0,1640,760],[1.3,1640,760],[2.3,700,330],[3.1,760,330],[3.7,940,700],[4.15,124,188],[4.6,124,188],
+            [5.6,600,560],[6.3,872,470],[7.5,880,474],[8.05,124,392],[8.5,124,392],[9.3,500,700],[10.1,520,690],[10.8,1230,560],[11.6,1260,560]];
+function cur(t){ for(let i=0;i<CK.length-1;i++){ const [t0,x0,y0]=CK[i],[t1,x1,y1]=CK[i+1];
+   if(t<=t1){ const p=io(P(t,t0,t1)); return [L(x0,x1,p),L(y0,y1,p)]; } } const l=CK[CK.length-1]; return [l[1],l[2]]; }
+const CLICKS=[4.35,8.3];
+const NAVY=[120,188,256,324,392];
+
+function render(t){
+  // fondo
+  $('b1').style.transform=`translate(${-180+Math.sin(t*.35)*60}px, ${420+Math.cos(t*.3)*50}px)`;
+  $('b2').style.transform=`translate(${380+Math.cos(t*.25)*70}px, ${1050+Math.sin(t*.28)*60}px)`;
+  $('b3').style.transform=`translate(${560+Math.sin(t*.4+1)*80}px, ${620+Math.cos(t*.33)*60}px)`;
+  const rm=io(P(t,11.2,12.2)); $('ring').style.transform=`translate(${L(720,800,rm)+Math.sin(t*.2)*14}px, ${L(480,40,rm)}px) rotate(${t*6}deg)`;
+  $('disc').style.transform=`translate(${-90+Math.cos(t*.3)*12}px, ${L(1160,1420,rm)+Math.sin(t*.25)*14}px)`;
+
+  // encabezado
+  const hout = io(P(t,11.2,11.8));
+  [['h0',0.0],['h1',0.12],['h2',0.28]].forEach(([id,a])=>{ const p=oc(P(t,a,a+.6)); const el=$(id);
+    el.style.opacity=p*(1-hout); el.style.transform=`translateY(${(1-p)*44 - hout*60}px)`; });
+
+  // pantalla: entrada, cámara y salida
+  const pin = oc(P(t,0.25,1.25)), pout = io(P(t,11.1,11.9));
+  let sc = L(.9,1,pin) * L(1,.82,pout), ty = (1-pin)*160 - pout*120;
+  // empuje suave + zoom a la tarjeta en falla
+  const z = io(P(t,6.2,6.9)) * (1-io(P(t,7.6,8.2)));
+  sc *= 1 + .03*P(t,1.2,4.3) + .08*z;
+  const tx = -70*z; ty -= 10*z;
+  const s=$('screen'); s.style.opacity = pin*(1-pout); s.style.transform=`translate(${tx}px, ${ty}px) scale(${sc})`;
+  $('note').style.opacity = oc(P(t,1.2,1.8))*(1-io(P(t,11.0,11.5)))*(1-z);
+
+  // menú lateral
+  let py = NAVY[0];
+  py = L(py, NAVY[1], io(P(t,4.35,4.65))); py = L(py, NAVY[4], io(P(t,8.3,8.6)));
+  $('pill').style.top = py+'px';
+  document.querySelectorAll('.nav').forEach((n,i)=>{ const on = Math.abs(NAVY[i]-py)<20; n.style.color = on?'#fff':'#c4bbd9'; n.style.fontWeight = on?600:400; });
+
+  // vistas
+  const vA = 1-io(P(t,4.4,4.7)), vB = io(P(t,4.45,4.75))*(1-io(P(t,8.35,8.65))), vC = io(P(t,8.4,8.7));
+  $('vA').style.opacity=vA; $('vB').style.opacity=vB; $('vC').style.opacity=vC;
+  $('vA').style.transform=`translateY(${(1-vA)*-14}px)`; $('vB').style.transform=`translateY(${(1-io(P(t,4.45,4.75)))*20}px)`; $('vC').style.transform=`translateY(${(1-vC)*20}px)`;
+
+  // A: tarjetas, números, gráfico, lista
+  for(let i=0;i<6;i++){ const el=$('ka'+i); const p=oc(P(t,0.75+i*.12,1.35+i*.12)); el.style.opacity=p; el.style.transform=`translateY(${(1-p)*30}px)`; }
+  const k=oc(P(t,1.0,2.4));
+  $('k1').textContent=fmt(L(80,96.4,k),1); $('k2').textContent=Math.round(L(0,12,k)); $('k3').textContent=fmt(L(4.5,2.1,k),1); $('k4').textContent=Math.round(L(0,94,k));
+  $('k4bar').style.width = (94*k)+'%';
+  const hov = io(P(t,2.2,2.5))*(1-io(P(t,3.0,3.3)));
+  $('ka1').style.transform=`translateY(${-8*hov}px)`; $('ka1').style.borderColor=`rgba(189,168,227,${.14+.5*hov})`;
+  const lp = io(P(t,1.5,3.2)); $('cline').style.strokeDashoffset = 1-lp; $('carea').style.opacity = oc(P(t,2.4,3.3));
+  const dp = ob(P(t,3.1,3.5)); $('cdot').setAttribute('opacity', P(t,3.1,3.2)); $('cdot').setAttribute('r', 11*dp);
+  const tg=$('ctag'); const tp=oc(P(t,3.25,3.6)); tg.style.opacity=tp; tg.style.transform=`translate(0, ${-50 - (1-tp)*14}px)`;
+  for(let i=0;i<4;i++){ const el=$('pr'+i); const p=oc(P(t,1.6+i*.14,2.1+i*.14)); el.style.opacity=p; el.style.transform=`translateX(${(1-p)*36}px)`; }
+
+  // B: equipos
+  const bc=oc(P(t,4.6,5.1)); $('ebc').style.opacity=bc; $('ebc').style.transform=`translateY(${(1-bc)*20}px)`;
+  for(let i=0;i<6;i++){ const el=$('eb'+i); const p=oc(P(t,4.65+i*.09,5.25+i*.09)); el.style.opacity=p; el.style.transform=`translateY(${(1-p)*34}px) scale(${L(.96,1,p)})`; }
+  const hb = io(P(t,6.2,6.5))*(1-io(P(t,7.8,8.1)));
+  const hot=$('eb1'); hot.style.transform=`translateY(${-10*hb}px) scale(${1+.03*hb})`;
+  hot.style.borderColor=`rgba(240,112,112,${.14+.7*hb})`; hot.style.boxShadow=`0 0 ${60*hb}px rgba(240,112,112,${.35*hb}), inset 0 1px 0 rgba(255,255,255,.12)`;
+
+  // C: indicadores
+  for(let i=0;i<5;i++){ const el=$('kc'+i); const p=oc(P(t,8.6+i*.1,9.2+i*.1)); el.style.opacity=p; el.style.transform=`translateY(${(1-p)*30}px)`; }
+  const kc=oc(P(t,8.8,10.0)); $('kcv0').textContent=Math.round(L(200,312,kc)); $('kcv1').textContent=Math.round(L(60,94,kc)); $('kcv2').textContent=Math.round(L(0,86,kc));
+  const C=942.5; const d1=io(P(t,9.0,10.1));
+  const prev=.68*C*d1, corr=.32*C*io(P(t,9.6,10.6));
+  $('dPrev').setAttribute('stroke-dasharray', `${prev} ${C}`);
+  $('dCorr').setAttribute('stroke-dasharray', `${corr} ${C}`); $('dCorr').setAttribute('stroke-dashoffset', `${-.68*C}`);
+  $('dpct').textContent = Math.round(68*d1)+' %';
+  for(let i=0;i<6;i++){ const p=ob(P(t,9.2+i*.1,9.75+i*.1)); $('vb'+i).style.transform=`scaleY(${Math.max(0,p)})`; }
+  const vt=oc(P(t,10.0,10.4)); $('vbt').style.opacity=vt; $('vbt').style.transform=`translateY(${(1-vt)*12}px)`;
+
+  // cursor y clic
+  const [cx,cy]=cur(t); const cu=$('cursor');
+  const pr=CLICKS.reduce((m,c)=>Math.max(m, cl(1-Math.abs(t-c)/.12)),0); cu.style.transform=`translate(${cx}px, ${cy}px) scale(${1-.15*pr})`;
+  cu.style.opacity = 1-io(P(t,11.0,11.4));
+  let rp=0, rx=0, ry=0; CLICKS.forEach(c=>{ const p=P(t,c,c+.5); if(t>=c && t<=c+.5){ rp=p; [rx,ry]=cur(c); } });
+  const rpl=$('ripple'); rpl.style.left=(rx+8)+'px'; rpl.style.top=(ry+8)+'px'; rpl.style.opacity = rp>0 ? (1-rp)*.9 : 0; rpl.style.transform=`scale(${.3+rp*1.1})`;
+
+  // textos de abajo
+  vis($('capA'), t, 1.15, 4.3); vis($('capB'), t, 4.75, 8.15); vis($('capC'), t, 8.75, 11.0);
+
+  // cierre
+  const lg=oc(P(t,11.8,12.5)); const el=$('elogo'); el.style.opacity=lg; el.style.transform=`translateY(${(1-lg)*30}px) scale(${L(.92,1,lg)})`;
+  rise($('e1'), t, 12.25); rise($('e2'), t, 12.5); rise($('e3'), t, 12.9, .5, 20);
+}
+render(0);
+</script></body></html>
