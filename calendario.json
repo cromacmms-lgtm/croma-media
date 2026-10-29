@@ -95,6 +95,13 @@
    "estado": "programado"
   },
   {
+   "slug": "2026-10-30-reel-bomba3",
+   "formato": "reel",
+   "fecha": "2026-10-30T10:05:00",
+   "metricool_id": 410558535,
+   "estado": "programado"
+  },
+  {
    "slug": "2026-11-05-mttr-mtbf",
    "formato": "carousel",
    "fecha": "2026-11-03T10:05:00",

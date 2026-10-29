@@ -1,0 +1,178 @@
+#!/usr/bin/env python3
+"""Reel técnico: qué te dice cada pico del espectro de vibraciones (espectros ilustrativos)."""
+import os, json
+HERE = os.path.dirname(os.path.abspath(__file__))
+F = '../../engine/fonts/'
+L = '../../engine/logos/'
+
+# chart (coordenadas dentro de la tarjeta)
+CX, CY, CW, CH = 100, 150, 800, 470      # área del gráfico
+XMAX, YMAX = 11.0, 8.0                   # órdenes de 1X, mm/s
+patterns = {
+    'base': [[1, 0.6]],
+    'desb': [[1, 6.6], [2, 0.8], [3, 0.4]],
+    'desa': [[1, 3.3], [2, 5.9], [3, 1.4]],
+    'holg': [[0.5, 1.0], [1, 3.0], [1.5, 0.9], [2, 2.5], [2.5, 0.8], [3, 2.2], [4, 1.9], [5, 1.6], [6, 1.4], [7, 1.2], [8, 1.05], [9, 0.95], [10, 0.85]],
+    'rod':  [[1, 1.3], [2, 0.5], [3.58, 2.7], [7.16, 2.1], [10.74, 1.4]],
+}
+cases = [
+    ('desb', '01', 'Desbalanceo', 'Radial', [['1X', 1]]),
+    ('desa', '02', 'Desalineación', 'Axial', [['1X', 1], ['2X', 2]]),
+    ('holg', '03', 'Holgura mecánica', 'Radial', [['½X', .5], ['1X', 1], ['2X', 2], ['3X', 3]]),
+    ('rod', '04', 'Falla de rodamiento', 'Radial', [['BPFO', 3.58], ['2×BPFO', 7.16]]),
+]
+def xpx(o): return CX + o / XMAX * CW
+def ypx(a): return CY + CH - a / YMAX * CH
+
+ticks = ''.join(f'<line x1="{xpx(o):.1f}" x2="{xpx(o):.1f}" y1="{CY+CH}" y2="{CY+CH+12}" stroke="#c4bbd9" stroke-width="2.5"/>'
+                f'<text x="{xpx(o):.1f}" y="{CY+CH+44}" text-anchor="middle" class="ax">{o}X</text>' for o in range(1, 11))
+grid = ''.join(f'<line x1="{CX}" x2="{CX+CW}" y1="{ypx(a):.1f}" y2="{ypx(a):.1f}" stroke="rgba(255,255,255,.09)" stroke-width="1.5"/>'
+               f'<text x="{CX-16}" y="{ypx(a)+7:.1f}" text-anchor="end" class="ax">{a}</text>' for a in (2, 4, 6, 8))
+chips = ''
+for ci, (_, _, _, _, lab) in enumerate(cases):
+    for li, (t, o) in enumerate(lab):
+        chips += f'<div class="pk" id="p{ci}_{li}" data-o="{o}">{t}</div>'
+heads = ''.join(f'<div class="case" id="ch{ci}"><b>{n}</b>{name}</div><div class="dir" id="dr{ci}">{d}</div>'
+                for ci, (_, n, name, d, _) in enumerate(cases))
+
+html = f'''<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<style>
+@font-face{{font-family:Sora;font-weight:400;src:url({F}sora-latin-400-normal.woff2)}}
+@font-face{{font-family:Sora;font-weight:600;src:url({F}sora-latin-600-normal.woff2)}}
+@font-face{{font-family:Sora;font-weight:700;src:url({F}sora-latin-700-normal.woff2)}}
+@font-face{{font-family:Sora;font-weight:400;src:url({F}sora-latin-ext-400-normal.woff2);unicode-range:U+0100-024F,U+00BD,U+00D7}}
+@font-face{{font-family:Sora;font-weight:600;src:url({F}sora-latin-ext-600-normal.woff2);unicode-range:U+0100-024F,U+00BD,U+00D7}}
+@font-face{{font-family:Sora;font-weight:700;src:url({F}sora-latin-ext-700-normal.woff2);unicode-range:U+0100-024F,U+00BD,U+00D7}}
+@font-face{{font-family:JBM;font-weight:500;src:url({F}jetbrains-mono-latin-500-normal.woff2)}}
+*{{box-sizing:border-box;margin:0}}
+html,body{{width:1080px;height:1920px;overflow:hidden;background:#120f1e;font-family:Sora,sans-serif;color:#f7f3ff}}
+.abs{{position:absolute}}
+#bg{{position:absolute;inset:0;overflow:hidden}}
+.blob{{position:absolute;border-radius:50%;filter:blur(90px)}}
+.grid{{position:absolute;inset:0;background-image:linear-gradient(rgba(189,168,227,.07) 2px,transparent 2px),linear-gradient(90deg,rgba(189,168,227,.07) 2px,transparent 2px);background-size:80px 80px}}
+.ring{{position:absolute;border-radius:50%;border:64px solid #bda8e3}}
+.glass{{background:linear-gradient(140deg,rgba(255,255,255,.16),rgba(255,255,255,.05) 55%,rgba(255,255,255,.09));
+  border:2px solid rgba(255,255,255,.24);box-shadow:0 50px 140px rgba(0,0,0,.55),inset 0 2px 0 rgba(255,255,255,.22);
+  -webkit-backdrop-filter:blur(30px) saturate(160%);backdrop-filter:blur(30px) saturate(160%)}}
+.eti{{position:absolute;left:0;right:0;text-align:center;font:500 32px/40px JBM,monospace;letter-spacing:.18em;color:#bda8e3;text-transform:uppercase}}
+.ttl{{position:absolute;left:0;right:0;text-align:center;font:700 84px/94px Sora;letter-spacing:-.025em}}
+#card{{position:absolute;left:60px;top:500px;width:960px;height:780px;border-radius:48px;overflow:hidden}}
+.ax{{font:400 22px Sora;fill:#c4bbd9}}
+.case{{position:absolute;left:40px;top:40px;display:flex;align-items:center;gap:16px;font:700 38px/1 Sora;color:#fff}}
+.case b{{font:500 26px/1 JBM,monospace;color:#2a1458;background:#bda8e3;padding:9px 12px;border-radius:12px}}
+.dir{{position:absolute;right:40px;top:40px;padding:12px 18px;border-radius:16px;background:rgba(189,168,227,.18);border:2px solid rgba(189,168,227,.45);font:600 24px/1 Sora;color:#fff}}
+.pk{{position:absolute;padding:9px 14px;border-radius:12px;background:#fff;color:#2a1458;font:700 23px/1 Sora;white-space:nowrap;transform-origin:50% 100%}}
+.yl{{position:absolute;left:40px;top:110px;font:400 21px/1 Sora;color:#c4bbd9}}
+.cap{{position:absolute;left:60px;right:60px;top:1330px;text-align:center;font:700 60px/70px Sora;letter-spacing:-.02em;color:#fff}}
+.cap em{{font-style:normal;color:#bda8e3}}
+#note{{position:absolute;left:0;right:0;top:1294px;text-align:center;font:500 22px/30px JBM,monospace;letter-spacing:.06em;color:rgba(189,168,227,.75)}}
+.endl{{position:absolute;left:0;right:0;text-align:center}}
+</style></head><body>
+<div id="bg">
+  <div class="blob" id="b1" style="width:820px;height:820px;background:#7c4ddb;opacity:.55"></div>
+  <div class="blob" id="b2" style="width:900px;height:900px;background:#512974;opacity:.85"></div>
+  <div class="blob" id="b3" style="width:520px;height:520px;background:#bda8e3;opacity:.30"></div>
+  <div class="grid"></div>
+  <div class="ring" id="ring" style="width:560px;height:560px"></div>
+  <div class="abs" id="disc" style="width:330px;height:330px;border-radius:50%;background:#7c4ddb"></div>
+</div>
+
+<div class="eti" id="h0" style="top:236px">Análisis de vibraciones</div>
+<div class="ttl" id="h1" style="top:290px">¿Qué te dice</div>
+<div class="ttl" id="h2" style="top:384px;color:#bda8e3">cada pico?</div>
+
+<div id="card" class="glass">
+  {heads}
+  <div class="yl">Amplitud (mm/s)</div>
+  <svg width="960" height="780" viewBox="0 0 960 780" style="position:absolute;left:0;top:0">
+    <defs><linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bda8e3" stop-opacity=".55"/><stop offset="1" stop-color="#bda8e3" stop-opacity=".04"/></linearGradient></defs>
+    {grid}
+    <path id="area" fill="url(#sg)"/>
+    <path id="line" fill="none" stroke="#ece5fa" stroke-width="3.5" stroke-linejoin="round"/>
+    <line x1="{CX}" y1="{CY-10}" x2="{CX}" y2="{CY+CH}" stroke="#c4bbd9" stroke-width="3"/>
+    <line x1="{CX}" y1="{CY+CH}" x2="{CX+CW}" y2="{CY+CH}" stroke="#c4bbd9" stroke-width="3"/>
+    {ticks}
+    <text x="{CX+CW}" y="{CY+CH+84}" text-anchor="end" class="ax">Frecuencia (órdenes de la velocidad de giro)</text>
+  </svg>
+  {chips}
+</div>
+<div id="note">Espectros ilustrativos</div>
+
+<div class="cap" id="c0"><em>Desbalanceo:</em> pico alto<br>a 1X, en radial.</div>
+<div class="cap" id="c1"><em>Desalineación:</em> 2X alto<br>y fuerte en axial.</div>
+<div class="cap" id="c2"><em>Holgura mecánica:</em><br>muchos armónicos de 1X.</div>
+<div class="cap" id="c3"><em>Rodamiento:</em> picos que<br>no son múltiplos de 1X.</div>
+
+<div class="endl ttl" id="f1" style="top:640px">Medir es la mitad.<br>La otra mitad es<br><span style="color:#bda8e3">comparar en el tiempo.</span></div>
+<img class="abs" id="flogo" src="{L}croma-logo-blanco.png" style="left:330px;top:1040px;width:420px">
+<div class="endl" id="f2" style="top:1190px;font:500 32px/40px JBM,monospace;color:#bda8e3">@cromacmms</div>
+
+<script>
+const DURATION = 14.0;
+const $ = id => document.getElementById(id);
+const cl = (v,a=0,b=1) => Math.min(b, Math.max(a, v));
+const P = (t,a,b) => cl((t-a)/(b-a));
+const io = x => x<.5 ? 4*x*x*x : 1-Math.pow(-2*x+2,3)/2;
+const oc = x => 1-Math.pow(1-x,3);
+const ob = x => {{const c1=1.7,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2);}};
+const L = (a,b,x) => a+(b-a)*x;
+function vis(el, t, a, b, d=0.4, dy=40){{ const pin=oc(P(t,a,a+d)), pout=io(P(t,b,b+d*.8));
+  el.style.opacity = pin*(1-pout); el.style.transform=`translateY(${{(1-pin)*dy - pout*dy*.6}}px)`; }}
+const PAT = {json.dumps(patterns)};
+const SEQ = ['base','desb','desa','holg','rod'];
+const T0 = [0, 1.0, 3.7, 6.4, 9.1];     // inicio de cada caso
+const END = 11.3;
+const CX={CX}, CY={CY}, CW={CW}, CH={CH}, XMAX={XMAX}, YMAX={YMAX}, N=440, SIG=0.055;
+const xpx = o => CX + o/XMAX*CW, ypx = a => CY + CH - a/YMAX*CH;
+function spec(name, o){{ let a=0; for(const [c,h] of PAT[name]) a += h*Math.exp(-((o-c)**2)/(2*SIG*SIG)); return a; }}
+function floor(name, o, t){{ let f = 0.18 + 0.06*Math.sin(o*13.1 + t*9) + 0.05*Math.sin(o*29.7 - t*13);
+  if(name==='rod') f += 0.55*Math.exp(-((o-9.5)**2)/(2*1.2*1.2)) * (0.8+0.2*Math.sin(o*41+t*17)); return Math.max(0.04,f); }}
+
+function render(t){{
+  $('b1').style.transform=`translate(${{-180+Math.sin(t*.35)*60}}px, ${{420+Math.cos(t*.3)*50}}px)`;
+  $('b2').style.transform=`translate(${{380+Math.cos(t*.25)*70}}px, ${{1050+Math.sin(t*.28)*60}}px)`;
+  $('b3').style.transform=`translate(${{560+Math.sin(t*.4+1)*80}}px, ${{620+Math.cos(t*.33)*60}}px)`;
+  const rm=io(P(t,END-.6,END+.2)); $('ring').style.transform=`translate(${{L(-300,780,rm)+Math.sin(t*.2)*14}}px, ${{L(700,120,rm)}}px) rotate(${{t*6}}deg)`;
+  $('disc').style.transform=`translate(${{-170+Math.cos(t*.3)*12}}px, ${{1580+Math.sin(t*.25)*14}}px)`;
+
+  const hout=io(P(t,END-.6,END-.1));
+  [['h0',0],['h1',0],['h2',.12]].forEach(([id,a])=>{{ const p=oc(P(t,a,a+.35)); const el=$(id); el.style.opacity=p*(1-hout); el.style.transform=`translateY(${{(1-p)*30 - hout*50}}px)`; }});
+  const cin=oc(P(t,0.15,0.7)), cout=io(P(t,END-.6,END-.1));
+  $('card').style.opacity=cin*(1-cout); $('card').style.transform=`translateY(${{(1-cin)*120 - cout*60}}px) scale(${{L(.95,1,cin)*L(1,.95,cout)}})`;
+  $('note').style.opacity=cin*(1-cout)*.9;
+
+  // caso actual y mezcla con el anterior
+  let k=0; for(let i=0;i<T0.length;i++) if(t>=T0[i]) k=i;
+  const m = k===0 ? 1 : io(P(t,T0[k],T0[k]+.55));
+  const A = SEQ[Math.max(0,k-1)], B = SEQ[k];
+  const fl = k>0 ? (n=>floor(B,n,t)*m + floor(A,n,t)*(1-m)) : (n=>floor('base',n,t));
+  let d='', area='';
+  for(let i=0;i<=N;i++){{ const o=i/N*XMAX; const wob = 1 + 0.03*Math.sin(t*11 + o*3);
+    const a = (spec(A,o)*(1-m) + spec(B,o)*m)*wob + fl(o); const x=xpx(o), y=ypx(Math.min(YMAX, a));
+    d += (i? 'L':'M') + x.toFixed(1)+','+y.toFixed(1); }}
+  $('line').setAttribute('d', d);
+  $('area').setAttribute('d', d + `L${{CX+CW}},${{CY+CH}} L${{CX}},${{CY+CH}} Z`);
+
+  // encabezados, direcciones, chips y textos por caso
+  for(let ci=0; ci<4; ci++){{
+    const a=T0[ci+1], b=(ci<3?T0[ci+2]:END-.5);
+    const pin=oc(P(t,a+.1,a+.45)), pout=io(P(t,b-.25,b));
+    const h=$('ch'+ci); h.style.opacity=pin*(1-pout); h.style.transform=`translateX(${{(1-pin)*-30}}px)`;
+    const dr=$('dr'+ci); dr.style.opacity=pin*(1-pout); dr.style.transform=`translateX(${{(1-pin)*30}}px)`;
+    let li=0; while($('p'+ci+'_'+li)){{ const el=$('p'+ci+'_'+li); const o=parseFloat(el.dataset.o);
+      const amp = spec(SEQ[ci+1], o) + 0.25; const s=ob(P(t,a+.45+li*.12,a+.8+li*.12));
+      el.style.left = (xpx(o) - el.offsetWidth/2)+'px'; el.style.top = (ypx(Math.min(YMAX,amp)) - 62)+'px';
+      el.style.opacity = P(t,a+.45+li*.12,a+.55+li*.12)*(1-pout); el.style.transform=`scale(${{Math.max(0,Math.min(1.2,s))}})`; li++; }}
+    vis($('c'+ci), t, a+.15, b);
+  }}
+
+  const f1=oc(P(t,END,END+.55)); $('f1').style.opacity=f1; $('f1').style.transform=`translateY(${{(1-f1)*40}}px)`;
+  const lg=oc(P(t,END+.6,END+1.1)); $('flogo').style.opacity=lg; $('flogo').style.transform=`translateY(${{(1-lg)*24}}px)`;
+  $('f2').style.opacity=oc(P(t,END+.9,END+1.3));
+}}
+render(0);
+</script></body></html>'''
+
+open(os.path.join(HERE, 'index.html'), 'w').write(html)
+print('ok')

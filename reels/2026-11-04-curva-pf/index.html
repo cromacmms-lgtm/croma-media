@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Sora;font-weight:400;src:url(../../engine/fonts/sora-latin-400-normal.woff2)}
+@font-face{font-family:Sora;font-weight:600;src:url(../../engine/fonts/sora-latin-600-normal.woff2)}
+@font-face{font-family:Sora;font-weight:700;src:url(../../engine/fonts/sora-latin-700-normal.woff2)}
+@font-face{font-family:Sora;font-weight:400;src:url(../../engine/fonts/sora-latin-ext-400-normal.woff2);unicode-range:U+0100-024F}
+@font-face{font-family:Sora;font-weight:600;src:url(../../engine/fonts/sora-latin-ext-600-normal.woff2);unicode-range:U+0100-024F}
+@font-face{font-family:Sora;font-weight:700;src:url(../../engine/fonts/sora-latin-ext-700-normal.woff2);unicode-range:U+0100-024F}
+@font-face{font-family:JBM;font-weight:500;src:url(../../engine/fonts/jetbrains-mono-latin-500-normal.woff2)}
+*{box-sizing:border-box;margin:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#120f1e;font-family:Sora,sans-serif;color:#f7f3ff}
+.abs{position:absolute}
+#bg{position:absolute;inset:0;overflow:hidden}
+.blob{position:absolute;border-radius:50%;filter:blur(90px)}
+.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(189,168,227,.07) 2px,transparent 2px),linear-gradient(90deg,rgba(189,168,227,.07) 2px,transparent 2px);background-size:80px 80px}
+.ring{position:absolute;border-radius:50%;border:64px solid #bda8e3}
+.glass{background:linear-gradient(140deg,rgba(255,255,255,.16),rgba(255,255,255,.05) 55%,rgba(255,255,255,.09));
+  border:2px solid rgba(255,255,255,.24);box-shadow:0 50px 140px rgba(0,0,0,.55),inset 0 2px 0 rgba(255,255,255,.22);
+  -webkit-backdrop-filter:blur(30px) saturate(160%);backdrop-filter:blur(30px) saturate(160%)}
+.eti{position:absolute;left:0;right:0;text-align:center;font:500 32px/40px JBM,monospace;letter-spacing:.18em;color:#bda8e3;text-transform:uppercase}
+.ttl{position:absolute;left:0;right:0;text-align:center;font:700 84px/94px Sora;letter-spacing:-.025em}
+#card{position:absolute;left:60px;top:500px;width:960px;height:780px;border-radius:48px;overflow:hidden}
+svg text{font-family:Sora}
+.ax{font:400 22px Sora;fill:#c4bbd9}
+.dn{font:700 21px Sora;fill:#fff}
+.big{font:700 44px Sora;fill:#fff}
+.lg{position:absolute;display:flex;align-items:center;gap:16px;font:600 30px/1 Sora;color:#fff}
+.lg b{width:46px;height:46px;border-radius:50%;background:#2a1458;border:3px solid #bda8e3;display:grid;place-items:center;font:700 22px/1 Sora;flex:none}
+.chip{position:absolute;padding:12px 18px;border-radius:16px;font:600 25px/1 Sora;white-space:nowrap}
+.cap{position:absolute;left:60px;right:60px;top:1330px;text-align:center;font:700 60px/70px Sora;letter-spacing:-.02em;color:#fff}
+.cap em{font-style:normal;color:#bda8e3}
+.endl{position:absolute;left:0;right:0;text-align:center}
+</style></head><body>
+<div id="bg">
+  <div class="blob" id="b1" style="width:820px;height:820px;background:#7c4ddb;opacity:.55"></div>
+  <div class="blob" id="b2" style="width:900px;height:900px;background:#512974;opacity:.85"></div>
+  <div class="blob" id="b3" style="width:520px;height:520px;background:#bda8e3;opacity:.30"></div>
+  <div class="grid"></div>
+  <div class="ring" id="ring" style="width:560px;height:560px"></div>
+  <div class="abs" id="disc" style="width:330px;height:330px;border-radius:50%;background:#7c4ddb"></div>
+</div>
+
+<div class="eti" id="h0" style="top:236px">Curva P-F</div>
+<div class="ttl" id="h1" style="top:290px">Tu equipo avisa</div>
+<div class="ttl" id="h2" style="top:384px;color:#bda8e3">antes de fallar.</div>
+
+<div id="card" class="glass">
+ <svg width="960" height="470" viewBox="0 0 960 470" style="position:absolute;left:0;top:10px">
+  <g stroke="rgba(255,255,255,.10)" stroke-width="1.5">
+   <line x1="90" x2="850" y1="152.5" y2="152.5"/><line x1="90" x2="850" y1="235.0" y2="235.0"/>
+  </g>
+  <line x1="90" y1="60" x2="90" y2="400" stroke="#c4bbd9" stroke-width="3"/>
+  <line x1="90" y1="400" x2="870" y2="400" stroke="#c4bbd9" stroke-width="3"/>
+  <text class="ax" transform="translate(64,235.0) rotate(-90)" text-anchor="middle">Condición del equipo</text>
+  <text class="ax" x="870" y="434" text-anchor="end">Tiempo</text>
+  <line id="thr" x1="90" x2="850" y1="317.5" y2="317.5" stroke="#f07070" stroke-width="3" stroke-dasharray="12 10" opacity="0"/>
+  <path id="curve" d="M90.0,70.0 L93.8,70.0 L97.6,70.1 L101.4,70.1 L105.2,70.2 L109.0,70.2 L112.8,70.3 L116.6,70.3 L120.4,70.4 L124.2,70.4 L128.0,70.5 L131.8,70.5 L135.6,70.6 L139.4,70.6 L143.2,70.7 L147.0,70.8 L150.8,70.8 L154.6,70.9 L158.4,70.9 L162.2,71.0 L166.0,71.0 L169.8,71.1 L173.6,71.1 L177.4,71.2 L181.2,71.3 L185.0,71.3 L188.8,71.4 L192.6,71.4 L196.4,71.5 L200.2,71.6 L204.0,71.6 L207.8,71.7 L211.6,71.8 L215.4,71.9 L219.2,71.9 L223.0,72.0 L226.8,72.1 L230.6,72.2 L234.4,72.3 L238.2,72.4 L242.0,72.5 L245.8,72.6 L249.6,72.7 L253.4,72.8 L257.2,72.9 L261.0,73.0 L264.8,73.2 L268.6,73.3 L272.4,73.4 L276.2,73.6 L280.0,73.7 L283.8,73.9 L287.6,74.0 L291.4,74.2 L295.2,74.3 L299.0,74.5 L302.8,74.7 L306.6,74.9 L310.4,75.1 L314.2,75.3 L318.0,75.5 L321.8,75.7 L325.6,76.0 L329.4,76.2 L333.2,76.5 L337.0,76.7 L340.8,77.0 L344.6,77.3 L348.4,77.6 L352.2,77.9 L356.0,78.2 L359.8,78.5 L363.6,78.8 L367.4,79.2 L371.2,79.5 L375.0,79.9 L378.8,80.3 L382.6,80.7 L386.4,81.1 L390.2,81.5 L394.0,82.0 L397.8,82.4 L401.6,82.9 L405.4,83.4 L409.2,83.9 L413.0,84.4 L416.8,85.0 L420.6,85.5 L424.4,86.1 L428.2,86.7 L432.0,87.3 L435.8,87.9 L439.6,88.6 L443.4,89.3 L447.2,90.0 L451.0,90.7 L454.8,91.4 L458.6,92.1 L462.4,92.9 L466.2,93.7 L470.0,94.5 L473.8,95.4 L477.6,96.3 L481.4,97.2 L485.2,98.1 L489.0,99.0 L492.8,100.0 L496.6,101.0 L500.4,102.0 L504.2,103.1 L508.0,104.1 L511.8,105.2 L515.6,106.4 L519.4,107.5 L523.2,108.7 L527.0,110.0 L530.8,111.2 L534.6,112.5 L538.4,113.8 L542.2,115.2 L546.0,116.6 L549.8,118.0 L553.6,119.4 L557.4,120.9 L561.2,122.5 L565.0,124.0 L568.8,125.6 L572.6,127.3 L576.4,128.9 L580.2,130.6 L584.0,132.4 L587.8,134.2 L591.6,136.0 L595.4,137.9 L599.2,139.8 L603.0,141.8 L606.8,143.8 L610.6,145.8 L614.4,147.9 L618.2,150.0 L622.0,152.2 L625.8,154.4 L629.6,156.7 L633.4,159.0 L637.2,161.4 L641.0,163.8 L644.8,166.3 L648.6,168.8 L652.4,171.3 L656.2,174.0 L660.0,176.6 L663.8,179.3 L667.6,182.1 L671.4,184.9 L675.2,187.8 L679.0,190.8 L682.8,193.8 L686.6,196.8 L690.4,199.9 L694.2,203.1 L698.0,206.3 L701.8,209.6 L705.6,213.0 L709.4,216.4 L713.2,219.9 L717.0,223.4 L720.8,227.0 L724.6,230.7 L728.4,234.4 L732.2,238.2 L736.0,242.1 L739.8,246.0 L743.6,250.0 L747.4,254.1 L751.2,258.2 L755.0,262.4 L758.8,266.7 L762.6,271.1 L766.4,275.5 L770.2,280.0 L774.0,284.6 L777.8,289.3 L781.6,294.0 L785.4,298.8 L789.2,303.7 L793.0,308.7 L796.8,313.7 L800.6,318.9 L804.4,324.1 L808.2,329.4 L812.0,334.8 L815.8,340.2 L819.6,345.8 L823.4,351.4 L827.2,357.1 L831.0,363.0 L834.8,368.9 L838.6,374.9 L842.4,380.9 L846.2,387.1 L850.0,393.4" fill="none" stroke="#bda8e3" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>
+  <line id="k0" x1="190.7" x2="190.7" y1="400" y2="374" stroke="#bda8e3" stroke-width="5" stroke-linecap="round" opacity="0"/><line id="k1" x1="394.0" x2="394.0" y1="400" y2="374" stroke="#bda8e3" stroke-width="5" stroke-linecap="round" opacity="0"/><line id="k2" x1="597.3" x2="597.3" y1="400" y2="374" stroke="#bda8e3" stroke-width="5" stroke-linecap="round" opacity="0"/><line id="k3" x1="800.6" x2="800.6" y1="400" y2="374" stroke="#bda8e3" stroke-width="5" stroke-linecap="round" opacity="0"/>
+  <g id="d0" opacity="0"><circle cx="470.0" cy="94.5" r="19" fill="#2a1458" stroke="#bda8e3" stroke-width="3.5"/><text x="470.0" y="102.5" text-anchor="middle" class="dn">1</text></g><g id="d1" opacity="0"><circle cx="546.0" cy="116.6" r="19" fill="#2a1458" stroke="#bda8e3" stroke-width="3.5"/><text x="546.0" y="124.6" text-anchor="middle" class="dn">2</text></g><g id="d2" opacity="0"><circle cx="606.8" cy="143.8" r="19" fill="#2a1458" stroke="#bda8e3" stroke-width="3.5"/><text x="606.8" y="151.8" text-anchor="middle" class="dn">3</text></g><g id="d3" opacity="0"><circle cx="660.0" cy="176.6" r="19" fill="#2a1458" stroke="#bda8e3" stroke-width="3.5"/><text x="660.0" y="184.6" text-anchor="middle" class="dn">4</text></g><g id="d4" opacity="0"><circle cx="713.2" cy="219.9" r="19" fill="#2a1458" stroke="#bda8e3" stroke-width="3.5"/><text x="713.2" y="227.9" text-anchor="middle" class="dn">5</text></g><g id="d5" opacity="0"><circle cx="758.8" cy="266.7" r="19" fill="#2a1458" stroke="#bda8e3" stroke-width="3.5"/><text x="758.8" y="274.7" text-anchor="middle" class="dn">6</text></g>
+  <g id="gP" opacity="0"><circle cx="394.0" cy="82.0" r="16" fill="#fff"/><text class="big" x="394.0" y="54.0" text-anchor="middle">P</text></g>
+  <g id="gF" opacity="0"><circle cx="800.6" cy="318.9" r="16" fill="#f07070"/><text class="big" x="834.6" y="332.9" text-anchor="start" style="fill:#f7a8a8">F</text></g>
+  <g id="gB" opacity="0">
+   <line x1="394.0" x2="800.6" y1="456" y2="456" stroke="#fff" stroke-width="4"/>
+   <line x1="394.0" x2="394.0" y1="444" y2="468" stroke="#fff" stroke-width="4"/>
+   <line x1="800.6" x2="800.6" y1="444" y2="468" stroke="#fff" stroke-width="4"/>
+  </g>
+ </svg>
+ <div class="chip" id="cP" style="left:324px;top:146px;background:#fff;color:#2a1458">Falla potencial</div>
+ <div class="chip" id="cF" style="left:539px;top:355px;background:#3d1717;color:#f7a8a8;border:2px solid rgba(240,112,112,.5)">Falla funcional</div>
+ <div class="chip" id="cB" style="left:479px;top:476px;background:rgba(189,168,227,.22);color:#fff;border:2px solid rgba(189,168,227,.5)">Intervalo P-F</div>
+ <div class="lg" id="l0" style="left:40px;top:560px"><b>1</b><span>Ultrasonido</span></div><div class="lg" id="l1" style="left:40px;top:630px"><b>2</b><span>Vibraciones</span></div><div class="lg" id="l2" style="left:40px;top:700px"><b>3</b><span>Análisis de aceite</span></div><div class="lg" id="l3" style="left:490px;top:560px"><b>4</b><span>Termografía</span></div><div class="lg" id="l4" style="left:490px;top:630px"><b>5</b><span>Ruido audible</span></div><div class="lg" id="l5" style="left:490px;top:700px"><b>6</b><span>Calor al tacto</span></div>
+</div>
+
+<div class="cap" id="cA"><em>Punto P:</em> la falla ya<br>empezó, pero no se ve.</div>
+<div class="cap" id="cB2">Primero la detecta un<br>instrumento. <em>Al final, tu mano.</em></div>
+<div class="cap" id="cC"><em>Intervalo P-F:</em> tu margen<br>para planificar.</div>
+<div class="cap" id="cD">Inspeccioná, como mínimo,<br>cada <em>medio intervalo P-F.</em></div>
+
+<div class="endl ttl" id="f1" style="top:640px">Detectar a tiempo<br>es <span style="color:#bda8e3">planificar.</span><br>Tarde, es <span style="color:#bda8e3">correr.</span></div>
+<img class="abs" id="flogo" src="../../engine/logos/croma-logo-blanco.png" style="left:330px;top:1040px;width:420px">
+<div class="endl" id="f2" style="top:1190px;font:500 32px/40px JBM,monospace;color:#bda8e3">@cromacmms</div>
+
+<script>
+const DURATION = 13.5;
+const $ = id => document.getElementById(id);
+const cl = (v,a=0,b=1) => Math.min(b, Math.max(a, v));
+const P = (t,a,b) => cl((t-a)/(b-a));
+const io = x => x<.5 ? 4*x*x*x : 1-Math.pow(-2*x+2,3)/2;
+const oc = x => 1-Math.pow(1-x,3);
+const ob = x => {const c1=1.7,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2);};
+const L = (a,b,x) => a+(b-a)*x;
+function vis(el, t, a, b, d=0.4, dy=40){ const pin=oc(P(t,a,a+d)), pout=io(P(t,b,b+d*.8));
+  el.style.opacity = pin*(1-pout); el.style.transform=`translateY(${(1-pin)*dy - pout*dy*.6}px)`; }
+function pop(el, t, a){ const k=ob(P(t,a,a+.35)); el.style.opacity=P(t,a,a+.08); el.style.transform=`scale(${Math.max(0,k)})`; el.style.transformOrigin='center'; el.style.transformBox='fill-box'; }
+// avance de la curva en x (0..1) según el tiempo
+const XP=0.4, XF=0.935, PTS=[0.5, 0.6, 0.68, 0.75, 0.82, 0.88], ARC=[0.0, 0.0043, 0.0086, 0.013, 0.0173, 0.0216, 0.0259, 0.0302, 0.0345, 0.0389, 0.0432, 0.0475, 0.0518, 0.0561, 0.0604, 0.0648, 0.0691, 0.0734, 0.0777, 0.082, 0.0864, 0.0907, 0.095, 0.0993, 0.1036, 0.1079, 0.1123, 0.1166, 0.1209, 0.1252, 0.1295, 0.1339, 0.1382, 0.1425, 0.1468, 0.1511, 0.1554, 0.1598, 0.1641, 0.1684, 0.1727, 0.177, 0.1814, 0.1857, 0.19, 0.1943, 0.1986, 0.203, 0.2073, 0.2116, 0.2159, 0.2202, 0.2246, 0.2289, 0.2332, 0.2375, 0.2418, 0.2462, 0.2505, 0.2548, 0.2591, 0.2635, 0.2678, 0.2721, 0.2764, 0.2808, 0.2851, 0.2894, 0.2938, 0.2981, 0.3024, 0.3068, 0.3111, 0.3154, 0.3198, 0.3241, 0.3284, 0.3328, 0.3371, 0.3415, 0.3458, 0.3502, 0.3545, 0.3589, 0.3632, 0.3676, 0.3719, 0.3763, 0.3807, 0.385, 0.3894, 0.3938, 0.3982, 0.4025, 0.4069, 0.4113, 0.4157, 0.4201, 0.4245, 0.4289, 0.4334, 0.4378, 0.4422, 0.4466, 0.4511, 0.4555, 0.46, 0.4645, 0.4689, 0.4734, 0.4779, 0.4824, 0.4869, 0.4914, 0.4959, 0.5005, 0.505, 0.5096, 0.5142, 0.5187, 0.5233, 0.5279, 0.5326, 0.5372, 0.5419, 0.5465, 0.5512, 0.5559, 0.5606, 0.5654, 0.5701, 0.5749, 0.5797, 0.5845, 0.5893, 0.5942, 0.5991, 0.604, 0.6089, 0.6138, 0.6188, 0.6238, 0.6288, 0.6339, 0.639, 0.6441, 0.6493, 0.6544, 0.6596, 0.6649, 0.6702, 0.6755, 0.6808, 0.6862, 0.6916, 0.6971, 0.7026, 0.7081, 0.7137, 0.7193, 0.725, 0.7307, 0.7364, 0.7422, 0.7481, 0.754, 0.7599, 0.7659, 0.772, 0.7781, 0.7843, 0.7905, 0.7967, 0.8031, 0.8095, 0.8159, 0.8224, 0.829, 0.8356, 0.8423, 0.8491, 0.8559, 0.8628, 0.8698, 0.8768, 0.8839, 0.8911, 0.8984, 0.9057, 0.9131, 0.9206, 0.9282, 0.9358, 0.9435, 0.9513, 0.9592, 0.9672, 0.9753, 0.9834, 0.9917, 1.0];
+function arc(x){ const f=x*200, i=Math.min(199,Math.floor(f)); return L(ARC[i],ARC[i+1],f-i); }
+function xAt(t){ if(t<0.7) return 0; if(t<2.4) return L(0, XP, io(P(t,0.7,2.4))); if(t<6.9) return L(XP, XF, P(t,2.6,6.9)); return L(XF, 1, P(t,6.9,7.3)); }
+function tAt(x){ return 2.6 + (x-XP)/(XF-XP)*(6.9-2.6); }
+
+function render(t){
+  $('b1').style.transform=`translate(${-180+Math.sin(t*.35)*60}px, ${420+Math.cos(t*.3)*50}px)`;
+  $('b2').style.transform=`translate(${380+Math.cos(t*.25)*70}px, ${1050+Math.sin(t*.28)*60}px)`;
+  $('b3').style.transform=`translate(${560+Math.sin(t*.4+1)*80}px, ${620+Math.cos(t*.33)*60}px)`;
+  $('ring').style.transform=`translate(${780+Math.sin(t*.2)*14}px, ${L(690,120,io(P(t,10.6,11.4)))}px) rotate(${t*6}deg)`;
+  $('disc').style.transform=`translate(${-170+Math.cos(t*.3)*12}px, ${1580+Math.sin(t*.25)*14}px)`;
+
+  const hout=io(P(t,10.6,11.1));
+  [['h0',0],['h1',0],['h2',.12]].forEach(([id,a])=>{ const p=oc(P(t,a,a+.35)); const el=$(id); el.style.opacity=p*(1-hout); el.style.transform=`translateY(${(1-p)*30 - hout*50}px)`; });
+  const cin=oc(P(t,0.2,0.8)), cout=io(P(t,10.6,11.1));
+  $('card').style.opacity=cin*(1-cout); $('card').style.transform=`translateY(${(1-cin)*120 - cout*60}px) scale(${L(.95,1,cin)*L(1,.95,cout)})`;
+
+  // curva: la longitud dibujada es aproximadamente proporcional a x (la curva se alarga al final)
+  const x=xAt(t); $('curve').style.strokeDashoffset = 1 - arc(x);
+  $('thr').setAttribute('opacity', 0.9*oc(P(t,2.8,3.4)));
+  pop($('gP'), t, 2.4); const cp=oc(P(t,2.5,2.85)); $('cP').style.opacity=cp; $('cP').style.transform=`translateY(${(1-cp)*16}px)`;
+  PTS.forEach((px,i)=>{ const a=tAt(px); pop($('d'+i), t, a); const l=oc(P(t,a,a+.35)); $('l'+i).style.opacity=l; $('l'+i).style.transform=`translateX(${(1-l)*30}px)`; });
+  pop($('gF'), t, 6.9); const cf=oc(P(t,7.0,7.35)); $('cF').style.opacity=cf; $('cF').style.transform=`translateY(${(1-cf)*16}px)`;
+  const br=oc(P(t,7.5,7.95)); $('gB').setAttribute('opacity', br); $('cB').style.opacity=br; $('cB').style.transform=`translateY(${(1-br)*14}px)`;
+  for(let j=0;j<4;j++){ const k=oc(P(t,9.1+j*.18,9.35+j*.18)); $('k'+j).setAttribute('opacity', k); }
+
+  vis($('cA'), t, 0.9, 3.3); vis($('cB2'), t, 3.5, 7.3); vis($('cC'), t, 7.5, 9.0); vis($('cD'), t, 9.1, 10.6);
+
+  const f1=oc(P(t,11.1,11.65)); $('f1').style.opacity=f1; $('f1').style.transform=`translateY(${(1-f1)*40}px)`;
+  const lg=oc(P(t,11.7,12.2)); $('flogo').style.opacity=lg; $('flogo').style.transform=`translateY(${(1-lg)*24}px)`;
+  $('f2').style.opacity=oc(P(t,12.0,12.4));
+}
+render(0);
+</script></body></html>
