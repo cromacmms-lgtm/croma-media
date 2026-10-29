@@ -1,0 +1,12 @@
+{
+ "slug": "2026-11-10-historia-tarjeta-roja-tip",
+ "format": "story",
+ "date": "2026-11-10T18:10:00",
+ "story": {
+  "theme": "claro",
+  "eti": "En CROMA",
+  "title": "La tarjeta roja **se carga desde el QR del equipo.**",
+  "sub": "Con foto, daño y causa. Después el planner la aprueba y la convierte en correctiva.",
+  "icon": "qr"
+ }
+}

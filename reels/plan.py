@@ -28,32 +28,38 @@ dict(slug='2026-11-05-adivinanza-compresor', fecha='2026-11-05T10:05:00', seed=1
            'más seguida si el ambiente tiene mucho polvo.\n\n¿La adivinaste? Contalo en los comentarios.\n\nCaso ilustrativo.\n\n'
            '#airecomprimido #compresores #mantenimientoindustrial #mantenimientopreventivo #CMMS #Córdoba')),
 # ------------------------------------------------------------------ mar 10/11
-dict(slug='2026-11-10-tres-cosas', fecha='2026-11-10T10:05:00', seed=2, portada=7.5,
-  titulo_reel='¿Tu software de mantenimiento hace estas 3 cosas?',
-  eti='Software de mantenimiento', titulo=['¿El tuyo hace', 'estas 3 cosas?'],
+dict(slug='2026-11-10-tarjeta-roja', fecha='2026-11-10T10:05:00', seed=2, portada=17,
+  titulo_reel='Tarjeta roja: una falla que no puede esperar',
+  eti='Falla con la línea en marcha', titulo=['Una falla que', 'no puede esperar.'],
   nota='Interfaz ilustrativa · datos de ejemplo',
   escenas=[
-    dict(tipo='checklist', dur=12, items=[
-      ('qr', 'Código QR en cada equipo', 'Lo escaneás y ves su historial y sus órdenes de trabajo.'),
-      ('camara', 'Falla reportada con foto', 'Desde el celular, en el momento y en el lugar.'),
-      ('campana', 'Avisos automáticos', 'El preventivo avisa antes de vencer.')]),
-    dict(tipo='telefono', dur=12, eti='En CROMA', titulo=['Así funciona', 'en la planta.'], pantallas=[
-      dict(eti='COMP-01', titulo='Escaneás el equipo', filas=[dict(tipo='qr'),
-           dict(titulo='Compresor de tornillo', sub='Sala de máquinas', chip='En servicio', chipc='ok', icon='compresor')]),
-      dict(eti='NUEVO AVISO', titulo='Reportás la falla con foto', filas=[dict(tipo='foto', icon='gota'),
-           dict(titulo='Pérdida de aceite', sub='COMP-01 · hace un momento', chip='Nuevo', chipc='warn', icon='alerta')]),
-      dict(eti='AVISOS', titulo='Y nada queda en el olvido', filas=[
-           dict(tipo='aviso', texto='El preventivo de COMP-01 vence mañana', icon='reloj', c='#f0b240'),
-           dict(tipo='aviso', texto='Nuevo aviso de falla en COMP-01', icon='alerta', c='#f07070'),
-           dict(tipo='aviso', texto='OT-0421 finalizada · COMP-01 en servicio', icon='check', c='#4fc795')]),
+    dict(tipo='texto', dur=5, icon='alerta', lines=['Pérdida de aceite en una prensa.', '**La línea está en marcha y no se puede detener.**'],
+      sub='Y no está en ningún plan de mantenimiento.'),
+    dict(tipo='filas', dur=10, eti='¿Qué hacemos?', titulo=['No es preventivo', 'ni correctivo ya.'], px=78, filas=[
+      dict(nombre='Preventivo', color='red', cuando='Descartado', texto='No hay un plan que la cubra.'),
+      dict(nombre='Correctivo inmediato', color='red', cuando='Descartado', texto='La línea no se puede detener ahora.'),
+      dict(nombre='Tarjeta roja', color='green', cuando='La respuesta', texto='Se registra hoy y se programa para cuando la línea lo permita.', destacar=True)]),
+    dict(tipo='telefono', dur=15, eti='Tarjeta roja en CROMA', titulo=['De la falla', 'a la correctiva.'], pantallas=[
+      dict(eti='TARJETA ROJA', titulo='El técnico escanea el equipo', filas=[dict(tipo='qr'),
+           dict(titulo='PRE-02 · Prensa hidráulica', sub='Línea 2 · en marcha', chip='En servicio', chipc='ok', icon='engranaje')]),
+      dict(eti='TARJETA ROJA', titulo='Carga la falla con foto', filas=[dict(tipo='foto', icon='gota'),
+           dict(titulo='Daño: pérdida de aceite', sub='Causa: retén del cilindro', chip='TR-0087', chipc='bad', icon='alerta')]),
+      dict(eti='PLANNER', titulo='La revisa y la aprueba', filas=[
+           dict(titulo='TR-0087 · PRE-02', sub='Pérdida de aceite · retén', chip='Aprobada', chipc='ok', icon='checklist'),
+           dict(tipo='aviso', texto='La TR-0087 pasó a orden de trabajo', icon='campana', c='#6f9cf0')]),
+      dict(eti='ORDEN DE TRABAJO', titulo='Correctiva asignada y programada', filas=[
+           dict(titulo='OT-0512 · Correctivo', sub='Hereda la info de la TR-0087', chip='Programada', chipc='info', icon='checklist'),
+           dict(titulo='Turno mañana', sub='Junto con el preventivo del 14/11', icon='persona'),
+           dict(titulo='Se cierra y no se repite', sub='Queda en el historial de PRE-02', chip='Historial', chipc='ok', icon='grafico')]),
     ]),
   ],
-  cierre=dict(texto='¿Cuántas tiene\n**el tuyo?**'),
-  caption=('¿Tu software de mantenimiento hace estas 3 cosas?\n\n1. Código QR en cada equipo: lo escaneás y ves su historial y sus '
-           'órdenes de trabajo.\n2. Falla reportada con foto, desde el celular, en el momento y en el lugar.\n3. Avisos automáticos: '
-           'el preventivo avisa antes de vencer.\n\nEn CROMA las tres vienen de base.\n\n¿Cuántas tiene el tuyo? Contanos en los '
-           'comentarios.\n\nInterfaz ilustrativa, datos de ejemplo.\n\n#mantenimiento #CMMS #softwaredemantenimiento '
-           '#mantenimientoindustrial #industria #Córdoba')),
+  cierre=dict(texto='Lo que no se puede\nhacer hoy,\n**se programa.**'),
+  caption=('Una falla que no puede esperar, en una línea que no se puede detener.\n\nNo es preventivo: no hay un plan que la cubra. '
+           'Tampoco es un correctivo inmediato: la línea está en marcha. Para eso está la tarjeta roja.\n\nEn CROMA, el técnico o el '
+           'operador escanea el código QR del equipo y carga la tarjeta roja con foto, daño y causa. El planner la revisa, la aprueba y '
+           'la convierte en una orden de trabajo correctiva, asignada y programada para cuando la línea lo permita. Al cerrarse, queda '
+           f'en el historial del equipo.\n\nNada se pierde entre turnos.\n\n¿Querés verlo con tus equipos? {CTA}\n\nInterfaz '
+           'ilustrativa, datos de ejemplo.\n\n#tarjetaroja #mantenimientoindustrial #CMMS #mejoracontinua #TPM #Córdoba')),
 # ------------------------------------------------------------------ jue 12/11
 dict(slug='2026-11-12-parada-de-planta', fecha='2026-11-12T10:05:00', seed=3, portada=6,
   titulo_reel='La parada de planta de enero se planifica en noviembre',
@@ -164,34 +170,30 @@ dict(slug='2026-11-26-cosechadora', fecha='2026-11-26T10:05:00', seed=7, portada
            'cargados.\n\nY registrá las horas de motor: así sabés cuándo toca cada servicio, aunque cambie el operador.\n\nPasáselo a '
            'tu contratista o a quien maneja la máquina.\n\n#agro #cosechafina #maquinariaagrícola #mantenimiento #campo #Córdoba')),
 # ------------------------------------------------------------------ mar 1/12
-dict(slug='2026-12-01-recorrido-ot', fecha='2026-12-01T10:05:00', seed=8, portada=9.5,
-  titulo_reel='Una orden de trabajo, del aviso al cierre',
-  eti='Una orden de trabajo', titulo=['Del aviso', 'al cierre.'],
-  nota='Interfaz ilustrativa · datos de ejemplo',
+dict(slug='2026-12-01-cinco-porques', fecha='2026-12-01T10:05:00', seed=8, portada=12,
+  titulo_reel='Los 5 porqués de una falla',
+  eti='Análisis de causa raíz', titulo=['Los 5 porqués', 'de una falla.'],
+  nota='Caso ilustrativo',
   escenas=[
-    dict(tipo='telefono', dur=17, pantallas=[
-      dict(eti='PASO 1 · AVISO', titulo='El operador escanea el equipo', filas=[dict(tipo='qr'),
-           dict(titulo='BOM-03 · Bomba de agua', sub='Planta de tratamiento', chip='En servicio', chipc='ok', icon='bomba')]),
-      dict(eti='PASO 2 · FALLA', titulo='Reporta la falla con foto', filas=[dict(tipo='foto', icon='gota'),
-           dict(titulo='Fuga por el sello mecánico', sub='BOM-03 · hace un momento', chip='Nuevo', chipc='warn', icon='alerta')]),
-      dict(eti='PASO 3 · ORDEN', titulo='El planner genera la orden de trabajo', filas=[
-           dict(titulo='OT-0418 · Correctivo', sub='Prioridad alta · BOM-03', chip='Asignada', chipc='info', icon='checklist'),
-           dict(titulo='Técnico asignado', sub='Turno mañana', icon='persona'),
-           dict(tipo='aviso', texto='Te asignaron la OT-0418', icon='campana', c='#6f9cf0')]),
-      dict(eti='PASO 4 · CIERRE', titulo='Se cierra y queda en el historial', filas=[
-           dict(titulo='Cambio de sello mecánico', sub='2,5 h · turno mañana', chip='Finalizada', chipc='ok', icon='llave'),
-           dict(titulo='Historial de BOM-03', sub='3 intervenciones este año', icon='grafico'),
-           dict(titulo='BOM-03', sub='Bomba de agua', chip='En servicio', chipc='ok', icon='bomba')]),
-    ]),
-    dict(tipo='texto', dur=5, eti='Así funciona', titulo=['Nadie pregunta', 'qué pasó.'], icon='checklist',
-      lines=['Cada paso queda registrado', '**en el equipo, con fecha y responsable.**']),
+    dict(tipo='texto', dur=5, icon='gota', lines=['Bomba de agua BOM-03:', '**fuga por el sello mecánico,**', 'por tercera vez en el año.'],
+      sub='Cambiar el sello otra vez no alcanza.'),
+    dict(tipo='linea', dur=17, etapas=[
+      ('alerta', '1 · ¿Por qué falla el sello?', 'Por vibración por encima de lo normal'),
+      ('grafico', '2 · ¿Por qué vibra?', 'Por desalineación entre motor y bomba'),
+      ('engranaje', '3 · ¿Por qué se desalinea?', 'Porque la base está floja'),
+      ('llave', '4 · ¿Por qué está floja?', 'Los pernos de anclaje perdieron el torque'),
+      ('checklist', '5 · ¿Por qué nadie lo vio?', 'El control de torque no estaba en el plan')]),
+    dict(tipo='texto', dur=5, eti='La acción', titulo=['Atacar la causa,', 'no el síntoma.'], icon='check',
+      lines=['Se agrega el control de torque', '**al preventivo de la bomba.**'],
+      sub='Y el análisis queda registrado en la orden de trabajo.'),
   ],
-  cierre=dict(texto='Del aviso al cierre,\n**todo en un lugar.**'),
-  caption=('Una orden de trabajo, del aviso al cierre.\n\n1. El operador escanea el código QR de la bomba.\n2. Reporta la falla con '
-           'foto: fuga por el sello mecánico.\n3. El planner genera la orden de trabajo y la asigna al técnico del turno.\n4. Se cierra '
-           'con lo que se hizo y queda en el historial del equipo.\n\nCada paso registrado, con fecha y responsable. Nadie tiene que '
-           f'preguntar qué pasó.\n\n¿Querés verlo con tus equipos? {CTA}\n\nInterfaz ilustrativa, datos de ejemplo.\n\n'
-           '#mantenimiento #CMMS #órdenesdetrabajo #mantenimientoindustrial #softwaredemantenimiento #Córdoba')),
+  cierre=dict(texto='Cambiar el repuesto\nes la mitad.\n**La otra es la causa.**'),
+  caption=('Los 5 porqués de una falla.\n\nBomba de agua: fuga por el sello mecánico, por tercera vez en el año.\n\n1. ¿Por qué falla el '
+           'sello? Por vibración por encima de lo normal.\n2. ¿Por qué vibra? Por desalineación entre motor y bomba.\n3. ¿Por qué se '
+           'desalinea? Porque la base está floja.\n4. ¿Por qué está floja? Los pernos de anclaje perdieron el torque.\n5. ¿Por qué nadie '
+           'lo vio? El control de torque no estaba en el plan.\n\nLa acción: agregar el control de torque al preventivo de la bomba. '
+           'Cambiar el repuesto es la mitad del trabajo; la otra mitad es atacar la causa.\n\nCaso ilustrativo.\n\n'
+           '#causaraíz #5porqués #confiabilidad #mantenimientoindustrial #mejoracontinua #CMMS')),
 # ------------------------------------------------------------------ jue 3/12
 dict(slug='2026-12-03-adivinanza-reductor', fecha='2026-12-03T10:05:00', seed=9, portada=6.5,
   titulo_reel='¿Qué falla es? Reductor de velocidad',
@@ -216,24 +218,25 @@ dict(slug='2026-12-03-adivinanza-reductor', fecha='2026-12-03T10:05:00', seed=9,
            'control de nivel con frecuencia fija.\n\n¿La adivinaste? Contalo en los comentarios.\n\nCaso ilustrativo.\n\n'
            '#reductores #lubricación #mantenimientoindustrial #mantenimientopreventivo #CMMS #Córdoba')),
 # ------------------------------------------------------------------ mar 8/12
-dict(slug='2026-12-08-pileta-hotel', fecha='2026-12-08T10:05:00', seed=10, portada=9,
-  titulo_reel='Temporada en las sierras: la pileta antes de enero',
-  eti='Hoteles y complejos', titulo=['La pileta,', 'antes de enero.'],
+dict(slug='2026-12-08-calor-verano', fecha='2026-12-08T10:05:00', seed=10, portada=13,
+  titulo_reel='4 equipos que sufren el calor del verano',
+  eti='Llega el verano', titulo=['4 equipos que', 'sufren el calor.'],
   escenas=[
-    dict(tipo='checklist', dur=15, encabezado='Antes de la temporada:', items=[
-      ('bomba', 'Bomba de recirculación', 'Sin fuga por el sello, sin vibración ni temperatura anormal.'),
-      ('filtro', 'Filtro', 'Retrolavado y estado del medio filtrante.'),
-      ('gota', 'Tratamiento del agua', 'Equipo de cloración funcionando y calibrado.'),
-      ('escudo', 'Seguridad', 'Rejillas de succión y tablero eléctrico en condiciones.')]),
-    dict(tipo='texto', dur=5, eti='En plena temporada', titulo=['Un técnico tarda', 'más en llegar.'], px=78,
-      icon='calendario', lines=['Por eso conviene dejar', '**el preventivo programado en CROMA**', 'antes de que llegue la gente.']),
+    dict(tipo='filas', dur=17, filas=[
+      dict(nombre='Compresores', color='amber', cuando='Temperatura de descarga', texto='Enfriador limpio y sala ventilada, o se detiene por alta temperatura.'),
+      dict(nombre='Motores eléctricos', color='amber', cuando='Temperatura de carcasa', texto='Aletas y tapa del ventilador limpias: el calor acorta la vida de la aislación.'),
+      dict(nombre='Tableros eléctricos', color='red', cuando='Puntos calientes', texto='Termografía y filtros de ventilación limpios antes de los días de más calor.'),
+      dict(nombre='Equipos de frío', color='blue', cuando='Presión de condensación', texto='Condensador limpio: con calor y suciedad trabaja de más y entra en falla.')]),
+    dict(tipo='texto', dur=5, eti='Antes del calor', titulo=['Programá las', 'inspecciones de verano.'], px=74, icon='calendario',
+      lines=['Limpiezas y termografías antes de enero,', '**con su fecha en CROMA.**']),
   ],
-  cierre=dict(texto='En enero,\nla pileta no espera.\n**Revisala hoy.**'),
-  caption=('Temporada en las sierras: la pileta, antes de enero.\n\n1. Bomba de recirculación: sin fuga por el sello, sin vibración ni '
-           'temperatura anormal.\n2. Filtro: retrolavado y estado del medio filtrante.\n3. Tratamiento del agua: equipo de cloración '
-           'funcionando y calibrado.\n4. Seguridad: rejillas de succión y tablero eléctrico en condiciones.\n\nEn plena temporada, un '
-           'técnico o un repuesto tardan más en llegar. Una pileta fuera de servicio en enero son reclamos.\n\nCompartilo con quien se '
-           'encarga del mantenimiento del hotel o complejo.\n\n#hotelería #turismoCórdoba #cabañas #piletas #mantenimiento #temporada')),
+  cierre=dict(texto='En verano,\nel equipo trabaja más.\n**Cuidalo antes.**'),
+  caption=('Llega el verano: 4 equipos que sufren el calor.\n\nCompresores: vigilá la temperatura de descarga. Enfriador limpio y sala '
+           'ventilada, o se detiene por alta temperatura.\n\nMotores eléctricos: temperatura de carcasa. Aletas y tapa del ventilador '
+           'limpias; el calor acorta la vida de la aislación.\n\nTableros eléctricos: puntos calientes. Termografía y filtros de '
+           'ventilación limpios antes de los días de más calor.\n\nEquipos de frío: presión de condensación. Con calor y el condensador '
+           'sucio, el equipo trabaja de más y entra en falla.\n\nProgramá limpiezas y termografías antes de enero, con su fecha en CROMA.\n\n'
+           '#verano #mantenimientoindustrial #termografía #airecomprimido #mantenimientopreventivo #Córdoba')),
 # ------------------------------------------------------------------ jue 10/12
 dict(slug='2026-12-10-mtbf-mttr', fecha='2026-12-10T10:05:00', seed=11, portada=7,
   titulo_reel='MTBF y MTTR con un ejemplo',

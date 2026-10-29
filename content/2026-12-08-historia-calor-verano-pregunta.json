@@ -1,0 +1,20 @@
+{
+ "slug": "2026-12-08-historia-calor-verano-pregunta",
+ "format": "story",
+ "date": "2026-12-08T18:10:00",
+ "story": {
+  "theme": "noche",
+  "kind": "question",
+  "eti": "Pregunta rápida",
+  "title": "¿Qué equipo **sufre más el calor en tu planta?**",
+  "size": 88,
+  "options": [
+   "Compresores",
+   "Motores eléctricos",
+   "Tableros eléctricos",
+   "Equipos de frío"
+  ],
+  "cta": "Respondé por DM",
+  "ring": false
+ }
+}
