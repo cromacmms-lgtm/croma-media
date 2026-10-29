@@ -36,6 +36,14 @@ Datos externos solo con fuente citada en la slide y en el texto (por ejemplo, Si
 
 **No repetir:** el enfoque "tu mantenimiento sigue en papel" y las "5 señales" ya se usaron; no volver a ese ángulo.
 
+## Reels
+
+- Son el formato que más alcance tiene. Un equipo concreto por reel (por ejemplo, una bomba centrífuga funcionando): por dónde puede fallar, qué síntoma da y con qué se detecta. Cuando aplica, cerrar con que esas inspecciones predictivas tienen su frecuencia y se programan en CROMA.
+- "Técnico" quiere decir nomenclatura correcta (falla, avería, modo de falla, síntoma, fuga por el sello, vibración y temperatura por encima de lo normal, equipo fuera de servicio), no teoría pesada. Nada de "se rompe" ni "hace ruido".
+- Variar el formato de un reel a otro (equipo animado, adivinanza, comparativo, mito o realidad, recorrido de una orden de trabajo, checklist). No repetir la misma estructura.
+- Ritmo: que se pueda leer sin pausar. Unos 4 segundos por bloque de texto; 15 a 21 segundos en total.
+- Cada reel vive en `reels/<fecha>-<tema>/` con `build.py` (arma `index.html` con `render(t)`) y `musica.py` (base instrumental propia). `node reels/render-reel.js <index.html> <carpeta>` saca los cuadros y ffmpeg los une con la música en `media/<slug>/reel.mp4`.
+
 ## Plantillas (`engine/croma.py`)
 
 - `cover`, `brand`: portadas (fondos `claro`, `suave`, `violeta`, `noche`; decorado `ring` o `icon`).
