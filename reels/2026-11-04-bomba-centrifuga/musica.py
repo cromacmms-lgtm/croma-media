@@ -7,7 +7,7 @@ from scipy.signal import fftconvolve, butter, sosfilt
 from scipy.io import wavfile
 
 SR = 44100
-DUR = 17.0
+DUR = 21.0
 N = int(SR * DUR)
 t = np.arange(N) / SR
 BPM = 120
@@ -48,7 +48,7 @@ def place(buf, sig, at):
 chords = [[55, 59, 62, 66, 69], [52, 55, 59, 62, 66], [48, 55, 60, 64, 67], [50, 54, 57, 62, 64]]
 roots = [43, 40, 36, 38]
 pad = np.zeros((N, 2))
-for ci, ch in enumerate(chords + chords[:1]):
+for ci, ch in enumerate(chords + chords[:2]):
     start, length = ci * 4.0, 4.6
     n = int(length * SR)
     tt = np.arange(n) / SR
@@ -73,7 +73,7 @@ kn = int(0.45 * SR)
 kt = np.arange(kn) / SR
 kf = 45 + 85 * np.exp(-kt * 30)
 kshape = np.sin(2 * np.pi * np.cumsum(kf) / SR) * np.exp(-kt * 9) + 0.15 * rng.standard_normal(kn) * np.exp(-kt * 120)
-kick_times = [0.5 + b * BEAT for b in range(40) if 0.5 + b * BEAT < 14.4] + [14.8]
+kick_times = [0.5 + b * BEAT for b in range(50) if 0.5 + b * BEAT < 18.2] + [18.6]
 for kt0 in kick_times:
     place(kick, kshape * 0.42, kt0)
 
@@ -88,10 +88,10 @@ for kt0 in kick_times:
 pad *= duck[:, None]
 
 sub = np.zeros(N)
-for ci, r in enumerate(roots + roots[:1]):
+for ci, r in enumerate(roots + roots[:2]):
     for b in range(8):
         at = ci * 4.0 + b * BEAT
-        if not (0.5 <= at < 14.4):
+        if not (0.5 <= at < 18.2):
             continue
         n = int(BEAT * SR)
         tt = np.arange(n) / SR
@@ -103,13 +103,13 @@ hn = int(0.08 * SR)
 hshape = hp(rng.standard_normal(hn), 7000) * np.exp(-np.arange(hn) / SR * 60)
 for b in range(int(DUR / BEAT) * 2):
     at = b * BEAT / 2
-    if 2.2 <= at < 14.4:
+    if 2.6 <= at < 18.2:
         place(hat, hshape * (0.30 if b % 2 else 0.12), at)
 
 # ---- melodía de campanitas (pluck) en los cambios de pantalla
 pluck = np.zeros(N)
-notes = [(2.2, 86), (5.4, 84), (6.0, 93), (6.35, 91), (6.7, 93), (8.6, 81), (12.1, 79), (12.35, 83), (12.6, 86),
-         (14.8, 79), (15.05, 83), (15.3, 86), (15.8, 91)]
+notes = [(2.6, 86), (6.6, 84), (7.2, 93), (7.55, 91), (7.9, 93), (10.6, 81), (14.9, 79), (15.15, 83), (15.4, 86),
+         (18.6, 79), (18.85, 83), (19.1, 86), (19.6, 91)]
 for at, m in notes:
     n = int(1.2 * SR)
     tt = np.arange(n) / SR
@@ -121,7 +121,7 @@ for at, m in notes:
 fx = np.zeros(N)
 cn = int(0.05 * SR)
 click = hp(rng.standard_normal(cn), 2500) * np.exp(-np.arange(cn) / SR * 160) * 0.25
-for at in [2.2, 5.4, 8.6, 11.8]:
+for at in [2.6, 6.6, 10.6, 14.6]:
     place(fx, click, at)
 
 
@@ -138,7 +138,7 @@ def sweep(a, b, f0, f1, gain):
 
 
 sweep(0.0, 0.8, 400, 5000, 0.30)
-sweep(14.1, 14.8, 6000, 500, 0.30)
+sweep(17.9, 18.6, 6000, 500, 0.30)
 
 # ---- reverb simple
 ir_n = int(1.6 * SR)

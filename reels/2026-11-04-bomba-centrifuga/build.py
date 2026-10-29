@@ -160,7 +160,7 @@ html,body{{width:1080px;height:1920px;overflow:hidden;background:#120f1e;font-fa
 <div class="endl" id="f2" style="top:1190px;font:500 32px/40px JBM,monospace;color:#bda8e3">@cromacmms</div>
 
 <script>
-const DURATION = 17.0;
+const DURATION = 21.0;
 const $ = id => document.getElementById(id);
 const cl = (v,a=0,b=1) => Math.min(b, Math.max(a, v));
 const P = (t,a,b) => cl((t-a)/(b-a));
@@ -168,8 +168,8 @@ const io = x => x<.5 ? 4*x*x*x : 1-Math.pow(-2*x+2,3)/2;
 const oc = x => 1-Math.pow(1-x,3);
 const ob = x => {{const c1=1.7,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2);}};
 const L = (a,b,x) => a+(b-a)*x;
-const S = [2.2, 5.4, 8.6, 11.8];   // inicio de rodamientos, sello, impulsor, predictivas
-const END = 14.8;
+const S = [2.6, 6.6, 10.6, 14.6];   // inicio de rodamientos, sello, impulsor, predictivas
+const END = 18.6;
 function pane(el, t, a, b){{ const pin=oc(P(t,a,a+.4)), pout=io(P(t,b-.3,b)); el.style.opacity=pin*(1-pout); el.style.transform=`translateY(${{(1-pin)*30 - pout*20}}px)`; }}
 
 function render(t){{
