@@ -1,0 +1,20 @@
+{
+ "slug": "2026-10-30-historia-bomba3-pregunta",
+ "format": "story",
+ "date": "2026-10-30T18:10:00",
+ "story": {
+  "theme": "noche",
+  "kind": "question",
+  "eti": "Pregunta rápida",
+  "title": "¿Dónde queda **el historial de tus equipos?**",
+  "size": 88,
+  "options": [
+   "En un sistema",
+   "En planillas",
+   "En el grupo de WhatsApp",
+   "En la memoria de alguien"
+  ],
+  "cta": "Respondé por DM",
+  "ring": false
+ }
+}

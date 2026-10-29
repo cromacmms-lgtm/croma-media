@@ -1,0 +1,12 @@
+{
+ "slug": "2026-12-10-historia-mtbf-mttr-tip",
+ "format": "story",
+ "date": "2026-12-10T18:10:00",
+ "story": {
+  "theme": "suave",
+  "eti": "La base",
+  "title": "Sin registros, **no hay indicadores.**",
+  "sub": "Cada falla con su hora de inicio y de fin: con eso ya podés calcular los dos.",
+  "icon": "grafico"
+ }
+}

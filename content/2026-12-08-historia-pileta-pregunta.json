@@ -1,0 +1,20 @@
+{
+ "slug": "2026-12-08-historia-pileta-pregunta",
+ "format": "story",
+ "date": "2026-12-08T18:10:00",
+ "story": {
+  "theme": "noche",
+  "kind": "question",
+  "eti": "Pregunta rápida",
+  "title": "¿Ya revisaste **los equipos para la temporada?**",
+  "size": 88,
+  "options": [
+   "Sí, todo listo",
+   "Estamos en eso",
+   "Todavía no",
+   "Lo vemos en enero"
+  ],
+  "cta": "Respondé por DM",
+  "ring": false
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "slug": "2026-12-15-historia-criticidad-pregunta",
+ "format": "story",
+ "date": "2026-12-15T18:10:00",
+ "story": {
+  "theme": "noche",
+  "kind": "question",
+  "eti": "Pregunta rápida",
+  "title": "¿Tenés tus equipos **clasificados por criticidad?**",
+  "size": 88,
+  "options": [
+   "Sí, todos",
+   "Solo los principales",
+   "Todavía no",
+   "Queremos empezar"
+  ],
+  "cta": "Respondé por DM",
+  "ring": false
+ }
+}

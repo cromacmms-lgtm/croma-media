@@ -1,0 +1,20 @@
+{
+ "slug": "2026-11-19-historia-mito-grasa-pregunta",
+ "format": "story",
+ "date": "2026-11-19T18:10:00",
+ "story": {
+  "theme": "noche",
+  "kind": "question",
+  "eti": "Pregunta rápida",
+  "title": "¿Quién define **cuánta grasa lleva cada rodamiento?**",
+  "size": 88,
+  "options": [
+   "El fabricante",
+   "El técnico, a ojo",
+   "El plan de lubricación",
+   "Nadie lo tiene definido"
+  ],
+  "cta": "Respondé por DM",
+  "ring": false
+ }
+}

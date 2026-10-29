@@ -1,0 +1,20 @@
+{
+ "slug": "2026-12-01-historia-recorrido-ot-pregunta",
+ "format": "story",
+ "date": "2026-12-01T18:10:00",
+ "story": {
+  "theme": "noche",
+  "kind": "question",
+  "eti": "Pregunta rápida",
+  "title": "¿Cuánto tardás en saber **qué le hicieron a un equipo?**",
+  "size": 88,
+  "options": [
+   "Segundos",
+   "Unos minutos",
+   "Más de una hora",
+   "No hay forma de saberlo"
+  ],
+  "cta": "Respondé por DM",
+  "ring": false
+ }
+}
