@@ -11,8 +11,9 @@ Este repositorio guarda las piezas que se publican en el Instagram de CROMA (@cr
 
 ## Ritmo
 
-- Publicaciones martes y jueves a las 10:05 (pico de audiencia según Metricool).
-- Esos mismos días, dos historias: 18:05 y 18:10. La primera anuncia la publicación ("Nuevo post").
+- Desde el 30/10/2026 el feed es solo de reels: martes y jueves a las 10:05 (pico de audiencia según Metricool).
+- Esos mismos días, dos historias estáticas: a las 18:05 la que anuncia el reel ("Nuevo reel") y a las 18:10 un tip o una pregunta.
+- Del 30/10 al 17/12/2026 está todo programado y aprobado. Hasta el 18/12 no se crea contenido nuevo: solo se controla que salga y se miden resultados.
 - Si las fechas se mueven a mano en Metricool, se respeta lo que quedó: antes de programar, mirar qué hay.
 - Cada pieza programada tiene su evento en Google Calendar con qué dice y el id de Metricool.
 
@@ -21,14 +22,15 @@ Este repositorio guarda las piezas que se publican en el Instagram de CROMA (@cr
 - **Público:** pymes industriales de Córdoba (agroindustria, alimentos, metalmecánica), hoteles y complejos de las sierras, constructoras y agro. Al dueño, al jefe de mantenimiento y al técnico.
 - **Tono:** profesional pero cercano, técnico sin ser frío, con orgullo de piso de planta. Español rioplatense con voseo ("guardalo", "escribinos").
 - **Nomenclatura correcta:** "detención", "falla", "fuera de servicio", "detención no planificada". Nunca "se para" ni "paró". "Equipo" en lugar de "máquina" cuando se habla en general.
-- **No mostrar el producto por dentro:** nada de pantallas, funciones, flujos ni KPIs del software. El contenido es educativo (tips, indicadores, checklists, costos) y de marca. El producto se muestra en la demo.
+- **No mostrar funciones genéricas** que cualquier software tiene (y que otros podrían copiar del video). El contenido es educativo (fallas, síntomas, indicadores, checklists, temporadas) y de marca, con un cierre corto que diga qué se programa en CROMA. La excepción aprobada es el flujo de la tarjeta roja: QR del equipo, carga con foto, aprobación del planner y correctiva programada. Solo se nombran funciones que CROMA tiene: QR por equipo, falla con foto, avisos automáticos, criticidad A, B o C, cálculo de MTBF y MTTR por equipo, preventivos con frecuencia. Nunca "carga por voz" ni "inteligencia artificial".
+- **Temas descartados:** piletas (no volver a usarlas). Tampoco el ángulo de la plata: el foco es la mejora, no "cuánto se gana".
 - **Sin datos inventados:** si un número es un ejemplo, se dice "ejemplo ilustrativo". Coma decimal y punto de miles.
 - **Llamada a la acción:** DM a @cromacmms o soporte@cromacmms.com.
 - Sin emojis decorativos ni signos de exclamación dobles.
 
 ## Pilares de contenido
 
-1. **Qué mejora en una empresa con un software de mantenimiento** (sin mostrar el producto): comparaciones sin sistema / con software en organización, planificación, trazabilidad, comunicación, seguridad, vida útil de los equipos y decisiones. El foco es la mejora de la empresa, no "cuánto se gana". Inspirarse en cómo comunican los mejores CMMS del mundo (MaintainX, UpKeep, Limble, Fracttal): datos concretos con fuente, comparaciones claras, tono directo.
+1. **Qué mejora en una empresa con un software de mantenimiento**: comparaciones sin sistema / con software en organización, planificación, trazabilidad, comunicación, seguridad, vida útil de los equipos y decisiones. El foco es la mejora de la empresa, no "cuánto se gana". Inspirarse en cómo comunican los mejores CMMS del mundo (MaintainX, UpKeep, Limble, Fracttal): datos concretos con fuente, comparaciones claras, tono directo.
 2. **Tips técnicos útiles** por rubro y temporada.
 3. **Marca:** quiénes somos, del piso de planta, frases propias. Sin fotos de personas: solo la marca.
 
@@ -41,8 +43,10 @@ Datos externos solo con fuente citada en la slide y en el texto (por ejemplo, Si
 - Son el formato que más alcance tiene. Un equipo concreto por reel (por ejemplo, una bomba centrífuga funcionando): por dónde puede fallar, qué síntoma da y con qué se detecta. Cuando aplica, cerrar con que esas inspecciones predictivas tienen su frecuencia y se programan en CROMA.
 - "Técnico" quiere decir nomenclatura correcta (falla, avería, modo de falla, síntoma, fuga por el sello, vibración y temperatura por encima de lo normal, equipo fuera de servicio), no teoría pesada. Nada de "se rompe" ni "hace ruido".
 - Variar el formato de un reel a otro (equipo animado, adivinanza, comparativo, mito o realidad, recorrido de una orden de trabajo, checklist). No repetir la misma estructura.
-- Ritmo: que se pueda leer sin pausar. Unos 4 segundos por bloque de texto; 15 a 21 segundos en total.
-- Cada reel vive en `reels/<fecha>-<tema>/` con `build.py` (arma `index.html` con `render(t)`) y `musica.py` (base instrumental propia). `node reels/render-reel.js <index.html> <carpeta>` saca los cuadros y ffmpeg los une con la música en `media/<slug>/reel.mp4`.
+- Ritmo: que se pueda leer sin pausar. Unos 4 segundos por bloque de texto; entre 18 y 33 segundos en total según cuántos bloques tenga.
+- Música: la base propia "ambiente suave" de `reels/musica_gen.py` (Meyer la eligió sobre las otras). No usar temas de terceros.
+- Motor por plantillas: cada reel se describe en `reels/plan.py` (escenas `texto`, `adivinanza`, `mito`, `checklist`, `filas`, `linea`, `formula`, `matriz`, `telefono`, `equipo`, `frecuencias`) y `reels/motor.py` arma `reels/<slug>/index.html` y `musica.json`. `./reels/render_lote.sh <carpeta-temporal> <slug>...` saca los cuadros, pone la música, codifica `media/<slug>/reel.mp4` y guarda la portada. No correr dos renders del mismo reel a la vez: pisan el mismo mp4.
+- Los reels más viejos (bomba 3, bomba centrífuga) tienen su propio `build.py` y `musica.py` en su carpeta.
 
 ## Plantillas (`engine/croma.py`)
 

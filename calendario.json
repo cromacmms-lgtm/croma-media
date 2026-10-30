@@ -7,7 +7,7 @@
    "formato": "carousel",
    "fecha": "2026-10-20T11:20:00",
    "metricool_id": 401141030,
-   "estado": "programado",
+   "estado": "publicado",
    "nota": "Republicada con soporte@cromacmms.com; la versión de las 10:05 con el mail anterior fue borrada."
   },
   {
@@ -15,183 +15,467 @@
    "formato": "story",
    "fecha": "2026-10-20T18:05:00",
    "metricool_id": 400157071,
-   "estado": "programado"
+   "estado": "publicado"
   },
   {
    "slug": "2026-10-22-historia-hablemos",
    "formato": "story",
    "fecha": "2026-10-20T18:10:00",
    "metricool_id": 401135937,
-   "estado": "programado"
+   "estado": "publicado"
   },
   {
    "slug": "2026-10-24-que-mejora-con-software",
    "formato": "carousel",
    "fecha": "2026-10-22T10:05:00",
    "metricool_id": 401135292,
-   "estado": "programado"
+   "estado": "publicado"
   },
   {
    "slug": "2026-10-24-historia-post-mejoras",
    "formato": "story",
    "fecha": "2026-10-22T18:05:00",
    "metricool_id": 400185723,
-   "estado": "programado"
+   "estado": "publicado"
   },
   {
    "slug": "2026-10-26-historia-pregunta-mejorar",
    "formato": "story",
    "fecha": "2026-10-22T18:10:00",
    "metricool_id": 400185748,
-   "estado": "programado"
+   "estado": "publicado"
   },
   {
    "slug": "2026-10-28-tiempo-o-uso",
    "formato": "carousel",
    "fecha": "2026-10-27T10:05:00",
    "metricool_id": 401135410,
-   "estado": "programado"
+   "estado": "publicado"
   },
   {
    "slug": "2026-10-28-historia-post-tiempo-uso",
    "formato": "story",
    "fecha": "2026-10-27T18:05:00",
    "metricool_id": 400185787,
-   "estado": "programado"
+   "estado": "publicado"
   },
   {
    "slug": "2026-10-30-historia-tip-senales",
    "formato": "story",
    "fecha": "2026-10-27T18:10:00",
    "metricool_id": 400185812,
-   "estado": "programado"
+   "estado": "publicado"
   },
   {
    "slug": "2026-10-28-reel-interfaz",
    "formato": "reel",
    "fecha": "2026-10-28T10:05:00",
    "metricool_id": 407818345,
-   "estado": "programado"
+   "estado": "publicado"
   },
   {
    "slug": "2026-11-01-temporada-hoteles",
    "formato": "carousel",
    "fecha": "2026-10-29T10:05:00",
    "metricool_id": 401135544,
-   "estado": "programado"
+   "estado": "publicado"
   },
   {
    "slug": "2026-11-01-historia-post-hoteles",
    "formato": "story",
    "fecha": "2026-10-29T18:05:00",
    "metricool_id": 400185847,
-   "estado": "programado"
+   "estado": "publicado"
   },
   {
    "slug": "2026-11-03-historia-tip-codigos",
    "formato": "story",
    "fecha": "2026-10-29T18:10:00",
    "metricool_id": 400185890,
-   "estado": "programado"
+   "estado": "publicado"
   },
   {
    "slug": "2026-10-30-reel-bomba3",
    "formato": "reel",
    "fecha": "2026-10-30T10:05:00",
    "metricool_id": 410558535,
-   "estado": "programado"
+   "estado": "programado",
+   "metricool_uuid": "6294996015274806927"
   },
   {
-   "slug": "2026-11-05-mttr-mtbf",
-   "formato": "carousel",
-   "fecha": "2026-11-03T10:05:00",
-   "metricool_id": 401135681,
-   "estado": "programado"
-  },
-  {
-   "slug": "2026-11-05-historia-post-mttr",
+   "slug": "2026-10-30-historia-bomba3-anuncio",
    "formato": "story",
-   "fecha": "2026-11-03T18:05:00",
-   "metricool_id": 400185935,
+   "fecha": "2026-10-30T18:05:00",
+   "metricool_id": 410666436,
+   "metricool_uuid": "1723323966141186496",
    "estado": "programado"
   },
   {
-   "slug": "2026-11-07-historia-frase-preventivo",
+   "slug": "2026-10-30-historia-bomba3-pregunta",
    "formato": "story",
-   "fecha": "2026-11-03T18:10:00",
-   "metricool_id": 400185986,
+   "fecha": "2026-10-30T18:10:00",
+   "metricool_id": 410666464,
+   "metricool_uuid": "-4426136336725227910",
    "estado": "programado"
   },
   {
    "slug": "2026-11-04-reel-bomba-centrifuga",
    "formato": "reel",
-   "fecha": "2026-11-04T10:05:00",
-   "metricool_id": 410621816,
+   "fecha": "2026-11-03T10:05:00",
+   "metricool_id": 410670651,
+   "metricool_uuid": "8865575974060968715",
+   "estado": "programado",
+   "nota": "Movido del 4/11 al martes 3/11."
+  },
+  {
+   "slug": "2026-11-03-historia-bomba-centrifuga-anuncio",
+   "formato": "story",
+   "fecha": "2026-11-03T18:05:00",
+   "metricool_id": 410666215,
+   "metricool_uuid": "6101098004593001392",
    "estado": "programado"
   },
   {
-   "slug": "2026-11-09-cosecha-fina",
-   "formato": "carousel",
+   "slug": "2026-11-03-historia-bomba-centrifuga-tip",
+   "formato": "story",
+   "fecha": "2026-11-03T18:10:00",
+   "metricool_id": 410666241,
+   "metricool_uuid": "-5152739561945414432",
+   "estado": "programado"
+  },
+  {
+   "slug": "2026-11-05-adivinanza-compresor",
+   "formato": "reel",
    "fecha": "2026-11-05T10:05:00",
-   "metricool_id": 401135793,
-   "estado": "programado"
+   "metricool_id": 410670722,
+   "metricool_uuid": "5461571414307260952",
+   "estado": "programado",
+   "media": "https://raw.githubusercontent.com/cromacmms-lgtm/croma-media/5a234ed80f4980bc7d0a2a68a771ffa06eabe30d/media/2026-11-05-adivinanza-compresor/reel.mp4"
   },
   {
-   "slug": "2026-11-09-historia-post-cosecha",
+   "slug": "2026-11-05-historia-adivinanza-compresor-anuncio",
    "formato": "story",
    "fecha": "2026-11-05T18:05:00",
-   "metricool_id": 400186035,
+   "metricool_id": 410666260,
+   "metricool_uuid": "-4096267341014544926",
    "estado": "programado"
   },
   {
-   "slug": "2026-11-11-historia-pregunta-equipo",
+   "slug": "2026-11-05-historia-adivinanza-compresor-pregunta",
    "formato": "story",
    "fecha": "2026-11-05T18:10:00",
-   "metricool_id": 400186069,
+   "metricool_id": 410666282,
+   "metricool_uuid": "6006716880669590617",
    "estado": "programado"
   },
   {
-   "slug": "2026-11-13-costo-detencion",
-   "formato": "carousel",
+   "slug": "2026-11-10-tarjeta-roja",
+   "formato": "reel",
    "fecha": "2026-11-10T10:05:00",
-   "metricool_id": 401135891,
-   "estado": "programado"
+   "metricool_id": 410670771,
+   "metricool_uuid": "2233966312080557432",
+   "estado": "programado",
+   "media": "https://raw.githubusercontent.com/cromacmms-lgtm/croma-media/e92c413c966900bdcb15080c329820a2e9f59a98/media/2026-11-10-tarjeta-roja/reel.mp4"
   },
   {
-   "slug": "2026-11-13-historia-post-costo",
+   "slug": "2026-11-10-historia-tarjeta-roja-anuncio",
    "formato": "story",
    "fecha": "2026-11-10T18:05:00",
-   "metricool_id": 400186107,
+   "metricool_id": 410666306,
+   "metricool_uuid": "-5413681373187127829",
    "estado": "programado"
   },
   {
-   "slug": "2026-11-15-historia-demo",
+   "slug": "2026-11-10-historia-tarjeta-roja-tip",
    "formato": "story",
    "fecha": "2026-11-10T18:10:00",
-   "metricool_id": 401135976,
+   "metricool_id": 410666333,
+   "metricool_uuid": "-6433117564735041934",
    "estado": "programado"
   },
   {
    "slug": "2026-11-12-parada-de-planta",
-   "formato": "carousel",
+   "formato": "reel",
    "fecha": "2026-11-12T10:05:00",
-   "metricool_id": 406544863,
-   "estado": "programado"
+   "metricool_id": 410670936,
+   "metricool_uuid": "-7476794809665564912",
+   "estado": "programado",
+   "media": "https://raw.githubusercontent.com/cromacmms-lgtm/croma-media/5a234ed80f4980bc7d0a2a68a771ffa06eabe30d/media/2026-11-12-parada-de-planta/reel.mp4"
   },
   {
-   "slug": "2026-11-12-historia-post-parada",
+   "slug": "2026-11-12-historia-parada-anuncio",
    "formato": "story",
    "fecha": "2026-11-12T18:05:00",
-   "metricool_id": 406544887,
+   "metricool_id": 410666362,
+   "metricool_uuid": "-2178477873431100374",
    "estado": "programado"
   },
   {
-   "slug": "2026-11-12-historia-pregunta-parada",
+   "slug": "2026-11-12-historia-parada-pregunta",
    "formato": "story",
    "fecha": "2026-11-12T18:10:00",
-   "metricool_id": 406544914,
+   "metricool_id": 410666381,
+   "metricool_uuid": "7020566556771831738",
+   "estado": "programado"
+  },
+  {
+   "slug": "2026-11-17-motor-electrico",
+   "formato": "reel",
+   "fecha": "2026-11-17T10:05:00",
+   "metricool_id": 410671005,
+   "metricool_uuid": "8699344469305934751",
+   "estado": "programado",
+   "media": "https://raw.githubusercontent.com/cromacmms-lgtm/croma-media/5a234ed80f4980bc7d0a2a68a771ffa06eabe30d/media/2026-11-17-motor-electrico/reel.mp4"
+  },
+  {
+   "slug": "2026-11-17-historia-motor-electrico-anuncio",
+   "formato": "story",
+   "fecha": "2026-11-17T18:05:00",
+   "metricool_id": 410666502,
+   "metricool_uuid": "-8058752860909187361",
+   "estado": "programado"
+  },
+  {
+   "slug": "2026-11-17-historia-motor-electrico-tip",
+   "formato": "story",
+   "fecha": "2026-11-17T18:10:00",
+   "metricool_id": 410666523,
+   "metricool_uuid": "-6012781626706672273",
+   "estado": "programado"
+  },
+  {
+   "slug": "2026-11-19-mito-grasa",
+   "formato": "reel",
+   "fecha": "2026-11-19T10:05:00",
+   "metricool_id": 410671055,
+   "metricool_uuid": "5430795967725390844",
+   "estado": "programado",
+   "media": "https://raw.githubusercontent.com/cromacmms-lgtm/croma-media/5a234ed80f4980bc7d0a2a68a771ffa06eabe30d/media/2026-11-19-mito-grasa/reel.mp4"
+  },
+  {
+   "slug": "2026-11-19-historia-mito-grasa-anuncio",
+   "formato": "story",
+   "fecha": "2026-11-19T18:05:00",
+   "metricool_id": 410666547,
+   "metricool_uuid": "-8026485675275695040",
+   "estado": "programado"
+  },
+  {
+   "slug": "2026-11-19-historia-mito-grasa-pregunta",
+   "formato": "story",
+   "fecha": "2026-11-19T18:10:00",
+   "metricool_id": 410666572,
+   "metricool_uuid": "-2175479954055542608",
+   "estado": "programado"
+  },
+  {
+   "slug": "2026-11-24-tres-estrategias",
+   "formato": "reel",
+   "fecha": "2026-11-24T10:05:00",
+   "metricool_id": 410671104,
+   "metricool_uuid": "-2782905383395308640",
+   "estado": "programado",
+   "media": "https://raw.githubusercontent.com/cromacmms-lgtm/croma-media/5a234ed80f4980bc7d0a2a68a771ffa06eabe30d/media/2026-11-24-tres-estrategias/reel.mp4"
+  },
+  {
+   "slug": "2026-11-24-historia-tres-estrategias-anuncio",
+   "formato": "story",
+   "fecha": "2026-11-24T18:05:00",
+   "metricool_id": 410666591,
+   "metricool_uuid": "2219843187919572066",
+   "estado": "programado"
+  },
+  {
+   "slug": "2026-11-24-historia-tres-estrategias-tip",
+   "formato": "story",
+   "fecha": "2026-11-24T18:10:00",
+   "metricool_id": 410666616,
+   "metricool_uuid": "4756284210951179459",
+   "estado": "programado"
+  },
+  {
+   "slug": "2026-11-26-cosechadora",
+   "formato": "reel",
+   "fecha": "2026-11-26T10:05:00",
+   "metricool_id": 410671153,
+   "metricool_uuid": "8865860371733957923",
+   "estado": "programado",
+   "media": "https://raw.githubusercontent.com/cromacmms-lgtm/croma-media/5a234ed80f4980bc7d0a2a68a771ffa06eabe30d/media/2026-11-26-cosechadora/reel.mp4"
+  },
+  {
+   "slug": "2026-11-26-historia-cosechadora-anuncio",
+   "formato": "story",
+   "fecha": "2026-11-26T18:05:00",
+   "metricool_id": 410666641,
+   "metricool_uuid": "1763286578300272934",
+   "estado": "programado"
+  },
+  {
+   "slug": "2026-11-26-historia-cosechadora-tip",
+   "formato": "story",
+   "fecha": "2026-11-26T18:10:00",
+   "metricool_id": 410666665,
+   "metricool_uuid": "1878062902309833954",
+   "estado": "programado"
+  },
+  {
+   "slug": "2026-12-01-cinco-porques",
+   "formato": "reel",
+   "fecha": "2026-12-01T10:05:00",
+   "metricool_id": 410671305,
+   "metricool_uuid": "2228363992068804162",
+   "estado": "programado",
+   "media": "https://raw.githubusercontent.com/cromacmms-lgtm/croma-media/e92c413c966900bdcb15080c329820a2e9f59a98/media/2026-12-01-cinco-porques/reel.mp4"
+  },
+  {
+   "slug": "2026-12-01-historia-cinco-porques-anuncio",
+   "formato": "story",
+   "fecha": "2026-12-01T18:05:00",
+   "metricool_id": 410666684,
+   "metricool_uuid": "-7731761220111413978",
+   "estado": "programado"
+  },
+  {
+   "slug": "2026-12-01-historia-cinco-porques-pregunta",
+   "formato": "story",
+   "fecha": "2026-12-01T18:10:00",
+   "metricool_id": 410666733,
+   "metricool_uuid": "2027225315012333279",
+   "estado": "programado"
+  },
+  {
+   "slug": "2026-12-03-adivinanza-reductor",
+   "formato": "reel",
+   "fecha": "2026-12-03T10:05:00",
+   "metricool_id": 410671356,
+   "metricool_uuid": "-4525848892694507935",
+   "estado": "programado",
+   "media": "https://raw.githubusercontent.com/cromacmms-lgtm/croma-media/5a234ed80f4980bc7d0a2a68a771ffa06eabe30d/media/2026-12-03-adivinanza-reductor/reel.mp4"
+  },
+  {
+   "slug": "2026-12-03-historia-adivinanza-reductor-anuncio",
+   "formato": "story",
+   "fecha": "2026-12-03T18:05:00",
+   "metricool_id": 410666770,
+   "metricool_uuid": "2701482691485650174",
+   "estado": "programado"
+  },
+  {
+   "slug": "2026-12-03-historia-adivinanza-reductor-tip",
+   "formato": "story",
+   "fecha": "2026-12-03T18:10:00",
+   "metricool_id": 410666793,
+   "metricool_uuid": "7512129938890311387",
+   "estado": "programado"
+  },
+  {
+   "slug": "2026-12-08-calor-verano",
+   "formato": "reel",
+   "fecha": "2026-12-08T10:05:00",
+   "metricool_id": 410671897,
+   "metricool_uuid": "-3574635171243933190",
+   "estado": "programado",
+   "media": "https://raw.githubusercontent.com/cromacmms-lgtm/croma-media/ec0cd9361146abdb33221174b881b27210f914ce/media/2026-12-08-calor-verano/reel.mp4"
+  },
+  {
+   "slug": "2026-12-08-historia-calor-verano-anuncio",
+   "formato": "story",
+   "fecha": "2026-12-08T18:05:00",
+   "metricool_id": 410666822,
+   "metricool_uuid": "-6794203954924075141",
+   "estado": "programado"
+  },
+  {
+   "slug": "2026-12-08-historia-calor-verano-pregunta",
+   "formato": "story",
+   "fecha": "2026-12-08T18:10:00",
+   "metricool_id": 410666841,
+   "metricool_uuid": "4926583529868969114",
+   "estado": "programado"
+  },
+  {
+   "slug": "2026-12-10-mtbf-mttr",
+   "formato": "reel",
+   "fecha": "2026-12-10T10:05:00",
+   "metricool_id": 410671415,
+   "metricool_uuid": "4315312332154356867",
+   "estado": "programado",
+   "media": "https://raw.githubusercontent.com/cromacmms-lgtm/croma-media/5a234ed80f4980bc7d0a2a68a771ffa06eabe30d/media/2026-12-10-mtbf-mttr/reel.mp4"
+  },
+  {
+   "slug": "2026-12-10-historia-mtbf-mttr-anuncio",
+   "formato": "story",
+   "fecha": "2026-12-10T18:05:00",
+   "metricool_id": 410666867,
+   "metricool_uuid": "-5384302974376522084",
+   "estado": "programado"
+  },
+  {
+   "slug": "2026-12-10-historia-mtbf-mttr-tip",
+   "formato": "story",
+   "fecha": "2026-12-10T18:10:00",
+   "metricool_id": 410666896,
+   "metricool_uuid": "-5913668006798671180",
+   "estado": "programado"
+  },
+  {
+   "slug": "2026-12-15-criticidad",
+   "formato": "reel",
+   "fecha": "2026-12-15T10:05:00",
+   "metricool_id": 410671478,
+   "metricool_uuid": "8769854604419220722",
+   "estado": "programado",
+   "media": "https://raw.githubusercontent.com/cromacmms-lgtm/croma-media/5a234ed80f4980bc7d0a2a68a771ffa06eabe30d/media/2026-12-15-criticidad/reel.mp4"
+  },
+  {
+   "slug": "2026-12-15-historia-criticidad-anuncio",
+   "formato": "story",
+   "fecha": "2026-12-15T18:05:00",
+   "metricool_id": 410666926,
+   "metricool_uuid": "-6832663044302746378",
+   "estado": "programado"
+  },
+  {
+   "slug": "2026-12-15-historia-criticidad-pregunta",
+   "formato": "story",
+   "fecha": "2026-12-15T18:10:00",
+   "metricool_id": 410666952,
+   "metricool_uuid": "-1748223015712045135",
+   "estado": "programado"
+  },
+  {
+   "slug": "2026-12-17-vacaciones",
+   "formato": "reel",
+   "fecha": "2026-12-17T10:05:00",
+   "metricool_id": 410671511,
+   "metricool_uuid": "-8355109715051724762",
+   "estado": "programado",
+   "media": "https://raw.githubusercontent.com/cromacmms-lgtm/croma-media/5a234ed80f4980bc7d0a2a68a771ffa06eabe30d/media/2026-12-17-vacaciones/reel.mp4"
+  },
+  {
+   "slug": "2026-12-17-historia-vacaciones-anuncio",
+   "formato": "story",
+   "fecha": "2026-12-17T18:05:00",
+   "metricool_id": 410666977,
+   "metricool_uuid": "-6892027221496868900",
+   "estado": "programado"
+  },
+  {
+   "slug": "2026-12-17-historia-vacaciones-tip",
+   "formato": "story",
+   "fecha": "2026-12-17T18:10:00",
+   "metricool_id": 410667005,
+   "metricool_uuid": "-8665189486543288409",
    "estado": "programado"
   }
  ],
- "ritmo": "Publicaciones martes y jueves 10:05; esos días, dos historias a las 18:05 y 18:10. Respetar lo que se mueva a mano en Metricool."
+ "ritmo": {
+  "desde": "2026-10-30",
+  "feed": "Solo reels: martes y jueves a las 10:05",
+  "historias": "Dos estáticas los días de reel: 18:05 anuncia el reel, 18:10 tip o pregunta",
+  "programado_hasta": "2026-12-17",
+  "nota": "Todo lo del 30/10 al 17/12 quedó programado el 29/10 y aprobado por Meyer. Hasta el 18/12 no se crea contenido nuevo; solo se controla que salga y se miden resultados.",
+  "respetar": "Respetar lo que se mueva a mano en Metricool."
+ },
+ "reemplazados_29_10": "Los carruseles MTTR (401135681), cosecha (401135793), costo (401135891) y parada (406544863) se reconvirtieron en reels; las historias viejas del 3, 5, 10 y 12/11 se reemplazaron por las nuevas. Los ids de Metricool cambian al editar: el uuid es el que se mantiene."
 }
