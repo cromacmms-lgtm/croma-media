@@ -20,10 +20,10 @@ FORMATO = {'adivinanza': 'Adivinanza', 'checklist': 'Checklist', 'linea': 'Líne
 
 extra = [
     dict(slug='2026-10-30-reel-bomba3', fecha='2026-10-30T10:05:00', titulo_reel='Cuando el jefe pregunta qué pasó con la bomba 3',
-         formato='Humor de planta', estado='Ya programado',
+         formato='Humor de planta', estado='Programado',
          caption=json.load(open(os.path.join(ROOT, 'content/2026-10-30-reel-bomba3.json')))['caption'], tema='bomba3'),
     dict(slug='2026-11-04-reel-bomba-centrifuga', fecha='2026-11-03T10:05:00', titulo_reel='Bomba centrífuga: por dónde puede fallar',
-         formato='Equipo animado', estado='Ya aprobado · pasa del miércoles 4 al martes 3',
+         formato='Equipo animado', estado='Programado · pasó del miércoles 4 al martes 3',
          caption=json.load(open(os.path.join(ROOT, 'content/2026-11-04-reel-bomba-centrifuga.json')))['caption'], tema='bomba-centrifuga'),
 ]
 items = []
@@ -33,7 +33,7 @@ for r in plan.REELS:
     tipos = [s['tipo'] for s in r['escenas'] if s['tipo'] != 'texto']
     tema = r['slug'][11:]
     items.append(dict(slug=r['slug'], fecha=r['fecha'], titulo_reel=r['titulo_reel'], formato=FORMATO.get(tipos[0], 'Reel') if tipos else 'Reel',
-                      estado='Nuevo', caption=r['caption'], tema=tema, src=os.path.join(PREV, r['slug'] + '-preview.mp4')))
+                      estado='Programado', caption=r['caption'], tema=tema, src=os.path.join(PREV, r['slug'] + '-preview.mp4')))
 items.sort(key=lambda x: x['fecha'])
 
 # historias por día
@@ -144,7 +144,7 @@ footer{{margin-top:30px;padding-top:20px;border-top:1px solid var(--line);color:
   <span class="eyebrow">Instagram @cromacmms · 30 de octubre al 18 de diciembre</span>
   <h1>Lo que sale hasta el 18 de diciembre</h1>
   <p class="lead">Reels los martes y jueves a las 10:05, y esos mismos días dos historias: a las 18:05 la que anuncia el reel y a las 18:10 un tip o una pregunta. Tocá cada reel para verlo y abrí "Texto del posteo" para leer lo que va abajo.</p>
-  <div class="facts"><span class="fact">{n_reels} reels</span><span class="fact">{n_hist} historias</span><span class="fact">Publicación automática con Metricool</span><span class="fact">Cada pieza también en tu Google Calendar</span></div>
+  <div class="facts"><span class="fact">{n_reels} reels</span><span class="fact">{n_hist} historias</span><span class="fact">Todo programado con publicación automática</span><span class="fact">Cada pieza también en tu Google Calendar</span></div>
 </header>
 {cards}
 <footer>Los videos de esta página están en calidad reducida para que carguen rápido; en Instagram salen en 1080 × 1920. Las interfaces y los datos que aparecen son ilustrativos.</footer>
